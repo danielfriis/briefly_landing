@@ -1,0 +1,62 @@
+---
+const features = [
+  {
+    icon: "🎧",
+    title: "Listen, don't scroll",
+    body: "Turn a backlog of open tabs into a hands-free brief for your commute, walk, or workout.",
+  },
+  {
+    icon: "📰",
+    title: "Follow topics",
+    body: "Pick presets like World news or Technology, or add your own — we research the live web and weave in a fresh segment.",
+  },
+  {
+    icon: "⏰",
+    title: "On your schedule",
+    body: "Set your local hour and timezone. Your brief lands right when you want it — or generate one on demand.",
+  },
+  {
+    icon: "🎙️",
+    title: "Your private podcast",
+    body: "Every account gets a private feed. Add it to Apple Podcasts, Overcast, or Pocket Casts and new briefs appear automatically.",
+  },
+  {
+    icon: "✍️",
+    title: "Written for radio",
+    body: "Not robotic bullet points — a natural script that flows, summarised by Claude and read in a clear voice.",
+  },
+  {
+    icon: "🔒",
+    title: "Yours alone",
+    body: "Your queue and feed are private, secured by a secret link you can rotate any time.",
+  },
+];
+---
+
+<section
+  id="features"
+  class="border-y border-stone-200 bg-white py-20 md:py-24"
+>
+  <div class="mx-auto max-w-6xl px-6">
+    <h2
+      class="text-center text-[clamp(1.75rem,4vw,2.375rem)] font-bold tracking-tight"
+    >
+      Everything in one calm feed
+    </h2>
+    <p class="mx-auto mt-2.5 mb-12 max-w-[36em] text-center text-lg text-stone-500">
+      Built for people with more to read than time to read it.
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      {
+        features.map((f) => (
+          <article class="rounded-2xl border border-stone-200 bg-stone-50 p-6 transition hover:-translate-y-0.5 hover:border-stone-300">
+            <div class="mb-3.5 text-[26px]">{f.icon}</div>
+            <h3 class="mb-2 text-lg font-semibold tracking-tight">{f.title}</h3>
+            <p class="text-[15px] text-stone-600">{f.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

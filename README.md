@@ -1,29 +1,48 @@
 # briefly_landing
 
-The static marketing landing page for **Morning Brief** (briefly) —
+The marketing landing page for **Morning Brief** (briefly) —
 _save it now, hear it in the morning._
 
-## What this is
+Built with [Astro](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com).
 
-A single, self-contained static page. No build step, no dependencies:
+## Stack
 
-- `index.html` — page markup
-- `styles.css` — all styling (warm, minimal, stone palette)
-- `favicon.svg` — site icon
+- **Astro 5** — static site generation, component-based `.astro` files
+- **Tailwind CSS v4** — via the `@tailwindcss/vite` plugin (no `tailwind.config.js`; theme tokens live in `src/styles/global.css`)
+- **Inter Variable** — self-hosted through `@fontsource-variable/inter`
 
-## Develop / preview
+## Project structure
 
-Just open `index.html` in a browser, or serve the folder:
+```
+src/
+  components/    Header, Hero, HowItWorks, Features, CTA, Footer
+  layouts/       Layout.astro   (html shell + <head> meta)
+  pages/         index.astro    (assembles the components)
+  styles/        global.css     (Tailwind import + theme tokens + waveform keyframes)
+  config.ts      shared brand + app URLs
+public/
+  favicon.svg
+```
+
+## Develop
 
 ```bash
-python3 -m http.server 8000
-# then visit http://localhost:8000
+npm install
+npm run dev      # http://localhost:4321
+```
+
+## Build
+
+```bash
+npm run build    # outputs static files to dist/
+npm run preview  # serve the production build locally
 ```
 
 ## Deploy
 
-Because it's fully static, it can be hosted anywhere — GitHub Pages,
-Netlify, Cloudflare Pages, S3, etc. Point the host at the repository root.
+`npm run build` produces a fully static `dist/` — host it anywhere
+(GitHub Pages, Netlify, Cloudflare Pages, S3, …).
 
-The call-to-action links assume the app lives at `https://app.briefly.sh`;
-update those URLs in `index.html` if the app domain differs.
+The call-to-action links live in `src/config.ts` and assume the app is at
+`https://app.briefly.sh`; update `appUrl` / `signUp` / `signIn` there if the
+app domain differs.

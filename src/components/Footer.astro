@@ -1,0 +1,18 @@
+---
+import { site } from "../config";
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-stone-200 bg-white py-8">
+  <div
+    class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6"
+  >
+    <a href="/" class="inline-flex items-center gap-2.5 text-lg font-bold tracking-tight">
+      <span class="text-[22px]" aria-hidden="true">{site.mark}</span>
+      <span>{site.name}</span>
+    </a>
+    <p class="text-sm text-stone-500">
+      © {year} {site.name}. Save it now. Hear it in the morning.
+    </p>
+  </div>
+</footer>

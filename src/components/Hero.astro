@@ -1,0 +1,140 @@
+---
+import { site } from "../config";
+
+const queue = [
+  "The state of AI agents in 2026",
+  "Why interest rates moved this week",
+  "A field guide to deep work",
+];
+
+// 30 waveform bars with varied animation delays for an organic pulse.
+const bars = Array.from({ length: 30 }, (_, i) => ({
+  delay: `${(i % 5) * 0.18}s`,
+  accent: i % 2 === 0,
+}));
+---
+
+<section
+  class="bg-[radial-gradient(900px_480px_at_78%_-8%,var(--color-cream)_0%,transparent_60%),radial-gradient(700px_420px_at_5%_10%,var(--color-stone-100)_0%,transparent_55%)]"
+>
+  <div
+    class="mx-auto grid max-w-6xl items-center gap-14 px-6 py-12 md:grid-cols-[1.05fr_.95fr] md:py-20"
+  >
+    <!-- Copy -->
+    <div>
+      <span
+        class="mb-6 inline-block rounded-full border border-[var(--color-cream-border)] bg-[var(--color-cream)] px-3 py-1.5 text-[13px] font-semibold tracking-wide text-amber-700"
+      >
+        Your day's reading, read back to you
+      </span>
+      <h1
+        class="text-[clamp(2.5rem,6vw,3.75rem)] font-bold leading-[1.04] tracking-tight"
+      >
+        Save it now.<br />Hear it in the morning.
+      </h1>
+      <p class="mt-5 max-w-[30em] text-lg text-stone-600">
+        Drop in the articles you didn't get to today. Overnight, AI brews them
+        into a tight podcast brief — ready and waiting before your first cup of
+        coffee.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href={site.signUp}
+          class="inline-flex items-center justify-center rounded-xl bg-stone-900 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-stone-700"
+          >Start your brief</a
+        >
+        <a
+          href="#how"
+          class="inline-flex items-center justify-center rounded-xl border border-stone-300 bg-white px-6 py-3.5 text-base font-semibold text-stone-700 transition hover:bg-stone-100"
+          >See how it works</a
+        >
+      </div>
+      <p class="mt-5 text-sm text-stone-500">
+        Free to start · Sign in with Google · Listen in any podcast app
+      </p>
+    </div>
+
+    <!-- Product mockup -->
+    <div class="relative flex justify-center" aria-hidden="true">
+      <!-- Player card -->
+      <div
+        class="w-[340px] max-w-full rounded-3xl border border-stone-200 bg-white p-6 shadow-[0_1px_2px_rgba(28,25,23,.04),0_12px_40px_rgba(28,25,23,.08)]"
+      >
+        <div class="mb-4 flex items-center gap-3">
+          <div
+            class="grid size-12 place-items-center rounded-xl bg-gradient-to-br from-[#fde9cf] to-[#f8d49b] text-2xl"
+          >
+            {site.mark}
+          </div>
+          <div>
+            <div class="text-[15px] font-bold">Morning Brief</div>
+            <div class="text-[13px] text-stone-500">
+              Friday · 5 stories · 7 min
+            </div>
+          </div>
+        </div>
+        <div class="mb-4 text-lg font-semibold tracking-tight">
+          Today's brief is ready
+        </div>
+
+        <div class="waveform mb-4 flex h-11 items-center gap-[3px]">
+          {
+            bars.map((b) => (
+              <span
+                class:list={[
+                  "flex-1 rounded-sm animate-[var(--animate-wave)]",
+                  b.accent ? "bg-amber-700/85" : "bg-stone-300",
+                ]}
+                style={`animation-delay:${b.delay}`}
+              />
+            ))
+          }
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button
+            class="grid size-9 place-items-center rounded-full border border-stone-200 bg-stone-50 text-[15px] text-stone-700"
+            >↺</button
+          >
+          <button
+            class="grid size-12 place-items-center rounded-full border border-stone-900 bg-stone-900 text-base text-white"
+            >▶</button
+          >
+          <button
+            class="grid size-9 place-items-center rounded-full border border-stone-200 bg-stone-50 text-[15px] text-stone-700"
+            >↻</button
+          >
+          <div class="ml-auto text-[13px] tabular-nums text-stone-500">
+            2:14 / 7:02
+          </div>
+        </div>
+      </div>
+
+      <!-- Queue card -->
+      <div
+        class="absolute -bottom-9 left-0 w-[260px] rounded-2xl border border-stone-200 bg-white p-4 shadow-[0_1px_2px_rgba(28,25,23,.04),0_12px_40px_rgba(28,25,23,.08)] md:-left-7"
+      >
+        <div
+          class="mb-2.5 text-xs font-semibold uppercase tracking-[0.06em] text-stone-400"
+        >
+          In your queue
+        </div>
+        <ul>
+          {
+            queue.map((item, i) => (
+              <li
+                class:list={[
+                  "flex items-center gap-2.5 py-1.5 text-sm text-stone-700",
+                  i > 0 && "border-t border-stone-100",
+                ]}
+              >
+                <span class="size-2 flex-none rounded-full bg-amber-700" />
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
