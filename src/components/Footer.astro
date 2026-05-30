@@ -3,15 +3,15 @@ import { site } from "../config";
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-stone-200 bg-white py-8">
+<footer class="border-t border-neutral-100">
   <div
-    class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6"
+    class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-8"
   >
-    <a href="/" class="inline-flex items-center gap-2.5 text-lg font-bold tracking-tight">
-      <span class="text-[22px]" aria-hidden="true">{site.mark}</span>
+    <a href="/" class="inline-flex items-center gap-2 text-[15px] font-semibold tracking-tight">
+      <span class="text-lg" aria-hidden="true">{site.mark}</span>
       <span>{site.name}</span>
     </a>
-    <p class="text-sm text-stone-500">
+    <p class="text-[13px] text-neutral-400">
       © {year} {site.name}. Save it now. Hear it in the morning.
     </p>
   </div>
