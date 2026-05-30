@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Morning Brief — Save it now. Hear it in the morning.</title>
+  <meta name="description" content="Save the articles you didn't get to today. Tomorrow morning, wake up to an AI-summarised podcast covering them — ready before your coffee." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Morning Brief" />
+  <meta property="og:description" content="Save links during the day. Wake up to an AI-summarised podcast covering them." />
+  <meta property="og:url" content="https://briefly.sh" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true">☕</span>
+        <span>Morning Brief</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a class="btn btn-ghost" href="https://app.briefly.sh/sign_in">Sign in</a>
+        <a class="btn btn-primary" href="https://app.briefly.sh/sign_up">Get started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Your day's reading, read back to you</span>
+          <h1>Save it now.<br />Hear it in the morning.</h1>
+          <p class="lead">
+            Drop in the articles you didn't get to today. Overnight, AI brews
+            them into a tight podcast brief — ready and waiting before your
+            first cup of coffee.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary btn-lg" href="https://app.briefly.sh/sign_up">Start your brief</a>
+            <a class="btn btn-ghost btn-lg" href="#how">See how it works</a>
+          </div>
+          <p class="hero-note">Free to start · Sign in with Google · Listen in any podcast app</p>
+        </div>
+
+        <!-- Product mockup: a podcast player card -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="player-card">
+            <div class="player-head">
+              <div class="player-art">☕</div>
+              <div>
+                <div class="player-show">Morning Brief</div>
+                <div class="player-date">Friday · 5 stories · 7 min</div>
+              </div>
+            </div>
+            <div class="player-title">Today's brief is ready</div>
+            <div class="waveform">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="player-controls">
+              <button class="ctrl" aria-label="Rewind">↺</button>
+              <button class="ctrl ctrl-play" aria-label="Play">▶</button>
+              <button class="ctrl" aria-label="Forward">↻</button>
+              <div class="player-time">2:14 / 7:02</div>
+            </div>
+          </div>
+
+          <div class="queue-card">
+            <div class="queue-head">In your queue</div>
+            <ul class="queue-list">
+              <li><span class="dot"></span>The state of AI agents in 2026</li>
+              <li><span class="dot"></span>Why interest rates moved this week</li>
+              <li><span class="dot"></span>A field guide to deep work</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="section">
+      <div class="container">
+        <h2 class="section-title">How it works</h2>
+        <p class="section-sub">Three steps. No new habits to build.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h3>Save links</h3>
+            <p>Paste any article URL into your queue during the day — from your phone or laptop.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h3>We brew it</h3>
+            <p>Overnight, AI reads each article and writes a tight radio script, then renders it to audio.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h3>Press play</h3>
+            <p>A single brief is waiting at your chosen hour — in the app or your favourite podcast player.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Everything in one calm feed</h2>
+        <p class="section-sub">Built for people with more to read than time to read it.</p>
+        <div class="features">
+          <article class="feature">
+            <div class="feature-icon">🎧</div>
+            <h3>Listen, don't scroll</h3>
+            <p>Turn a backlog of open tabs into a hands-free brief for your commute, walk, or workout.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">📰</div>
+            <h3>Follow topics</h3>
+            <p>Pick presets like World news or Technology, or add your own — we research the live web and weave in a fresh segment.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">⏰</div>
+            <h3>On your schedule</h3>
+            <p>Set your local hour and timezone. Your brief lands right when you want it — or generate one on demand.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">🎙️</div>
+            <h3>Your private podcast</h3>
+            <p>Every account gets a private feed. Add it to Apple Podcasts, Overcast, or Pocket Casts and new briefs appear automatically.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">✍️</div>
+            <h3>Written for radio</h3>
+            <p>Not robotic bullet points — a natural script that flows, summarised by Claude and read in a clear voice.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">🔒</div>
+            <h3>Yours alone</h3>
+            <p>Your queue and feed are private, secured by a secret link you can rotate any time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container cta-inner">
+        <h2>Wake up to your reading.</h2>
+        <p>Save a few links tonight. Hear them tomorrow morning.</p>
+        <a class="btn btn-primary btn-lg" href="https://app.briefly.sh/sign_up">Start your brief</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true">☕</span>
+        <span>Morning Brief</span>
+      </a>
+      <p class="footer-note">© <span id="year">2026</span> Morning Brief. Save it now. Hear it in the morning.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
