@@ -3,37 +3,37 @@
 /* Variable Inter via Fontsource */
 @import "@fontsource-variable/inter";
 
-/* ---- Theme tokens (warm "oatmeal" palette, matching shiori.sh) ---- */
+/* ---- Theme tokens (warm "sunrise" palette — dawn blush → peach → gold) ---- */
 @theme {
   --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto,
     sans-serif;
 
-  /* Warm neutral scale */
-  --color-palette-50: #fbf7f1;
-  --color-palette-100: #f4ece1;
-  --color-palette-200: #e9ddcc;
-  --color-palette-300: #d9c9b3;
-  --color-palette-400: #bba88c;
-  --color-palette-500: #93826a;
-  --color-palette-600: #6d5f4b;
-  --color-palette-700: #4e4334;
-  --color-palette-800: #342d23;
-  --color-palette-900: #211b14;
+  /* Warm dawn scale */
+  --color-palette-50: #fff6ef;
+  --color-palette-100: #ffe9da;
+  --color-palette-200: #ffd5bd;
+  --color-palette-300: #ffb892;
+  --color-palette-400: #fb9168;
+  --color-palette-500: #ef6d45;
+  --color-palette-600: #d4502d;
+  --color-palette-700: #a83b25;
+  --color-palette-800: #6e2a1d;
+  --color-palette-900: #431a13;
 
   /* Surfaces */
-  --color-surface: #f9f0e6; /* page background (oatmeal cream) */
-  --color-surface-2: #f3e9da; /* secondary fills */
-  --color-elevated: #fffdf9; /* cards / windows */
-  --color-line: #e7dac6; /* hairline borders */
+  --color-surface: #fff4ea; /* page background (soft dawn) */
+  --color-surface-2: #ffe8d7; /* secondary fills */
+  --color-elevated: #fffaf5; /* cards / windows */
+  --color-line: #f6d9c2; /* hairline borders */
 
   /* Text shades (primary → quaternary) */
-  --color-ink-1: #241d15;
-  --color-ink-2: #4e4334;
-  --color-ink-3: #6d5f4b;
-  --color-ink-4: #a8957a;
+  --color-ink-1: #3a1f15;
+  --color-ink-2: #6e3b27;
+  --color-ink-3: #97604a;
+  --color-ink-4: #c79680;
 
   /* Accent */
-  --color-tint: #f4731f;
+  --color-tint: #f97316;
 
   /* Waveform pulse */
   --animate-wave: wave 1.5s ease-in-out infinite;

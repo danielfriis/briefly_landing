@@ -8,7 +8,7 @@ const steps = [
   {
     title: "We brew it overnight",
     body: "AI reads each article, writes a tight radio script, and renders it to natural audio.",
-    icon: "cup",
+    icon: "sun",
   },
   {
     title: "Follow topics too",
@@ -53,12 +53,10 @@ const steps = [
                 <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 5.75V18.25M5.75 12H18.25" />
               </svg>
             )}
-            {s.icon === "cup" && (
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
-                <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M5.75 8.75H16.25V14C16.25 16.0711 14.5711 17.75 12.5 17.75H9.5C7.42893 17.75 5.75 16.0711 5.75 14V8.75Z" />
-                <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M16.25 10.25H17.75C18.8546 10.25 19.75 11.1454 19.75 12.25C19.75 13.3546 18.8546 14.25 17.75 14.25H16.25" />
-                <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M8.75 4.75V6" />
-                <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M12 4.75V6" />
+            {s.icon === "sun" && (
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="13" r="3.25" stroke="currentColor" stroke-width="1.5" />
+                <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 4.75V6.25M5.75 8L6.75 9M18.25 8L17.25 9M4.75 16.25H19.25" />
               </svg>
             )}
             {s.icon === "globe" && (
