@@ -31,11 +31,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       content="Save links during the day. Wake up to an AI-summarised podcast covering them."
     />
     <meta property="og:url" content={canonical} />
+    <meta name="theme-color" content="#f9f0e6" />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="generator" content={Astro.generator} />
   </head>
-  <body class="min-h-screen bg-white font-sans text-neutral-900 antialiased">
+  <body class="min-h-dvh bg-surface font-sans text-ink-1 subpixel-antialiased">
     <slot />
   </body>
 </html>
