@@ -1,7 +1,7 @@
 # briefly_landing
 
 The marketing landing page for **Recap** ([recap.am](https://recap.am)) —
-_save it now, hear it in the morning._
+_today's news, recapped tomorrow._
 
 Built with [Astro](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com).
 
