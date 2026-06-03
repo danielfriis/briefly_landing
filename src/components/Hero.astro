@@ -1,0 +1,175 @@
+---
+import { site } from "../config";
+
+const queue = [
+  { kind: "doc", title: "The state of AI agents in 2026", meta: "stratechery.com" },
+  { kind: "pdf", title: "Q1 macro outlook", meta: ".pdf" },
+  { kind: "mail", title: "Why interest rates moved this week", meta: "newsletter" },
+];
+
+const bars = Array.from({ length: 34 }, (_, i) => {
+  const h = 32 + Math.round(46 * Math.abs(Math.sin(i * 1.27)));
+  return { h, delay: `${((i % 7) * 0.11).toFixed(2)}s` };
+});
+---
+
+<section
+  class="relative overflow-hidden border-b bg-linear-to-t from-surface-2 to-transparent"
+>
+  <div class="relative z-10">
+    <div class="mx-auto flex w-full max-w-2xl flex-col">
+      <div class="mx-auto flex w-full max-w-2xl flex-col gap-8 px-4 py-16">
+        <!-- logo -->
+        <a href="/" class="select-none text-ink-1">
+          <span class="text-3xl" aria-hidden="true">{site.mark}</span>
+        </a>
+
+        <!-- headline + subhead -->
+        <div class="flex flex-col gap-4">
+          <h1
+            class="max-w-lg text-3xl font-medium tracking-[-0.5px] text-pretty text-ink-1 xl:text-4xl xl:tracking-[-0.7px]"
+          >
+            Today's news, recapped tomorrow.
+          </h1>
+          <p
+            class="text-2xl font-medium tracking-[-0.2px] text-pretty text-ink-3 xl:text-3xl xl:tracking-[-0.4px]"
+          >
+            Drop in the articles you didn't get to today, and wake up to an
+            AI-summarised podcast covering them.
+          </p>
+        </div>
+
+        <!-- buttons -->
+        <div class="flex flex-wrap gap-2">
+          <a
+            href={site.signUp}
+            class="inline-flex h-10 select-none items-center justify-center gap-1.5 self-center rounded-lg bg-palette-800 px-4 text-sm font-medium text-palette-50 shadow-lg transition-colors hover:bg-palette-700"
+            >Start for free</a
+          >
+          <a
+            href="#how"
+            class="inline-flex h-10 select-none items-center justify-center gap-1.5 self-center rounded-lg bg-palette-200/80 px-4 text-sm font-medium text-ink-1 transition-colors hover:bg-palette-200"
+            >How it works</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- product window, bleeding off the bottom edge -->
+    <div class="mx-auto w-full max-w-2xl" aria-hidden="true">
+      <div class="relative mx-auto px-4 pb-0 lg:-mx-8 xl:-mx-12">
+        <div class="flex h-10 items-end justify-center pb-4"></div>
+        <div
+          class="h-[340px] w-full translate-y-px overflow-hidden rounded-t-xl bg-elevated shadow-[0_4px_24px_color-mix(in_oklch,var(--color-palette-300)_45%,transparent)] ring-[0.5px] ring-line select-none"
+        >
+          <!-- window toolbar -->
+          <div class="flex items-center py-3 pr-4 pl-5">
+            <div class="flex items-center gap-1.5">
+              <div class="size-3 rounded-full bg-line"></div>
+              <div class="size-3 rounded-full bg-line"></div>
+              <div class="size-3 rounded-full bg-line"></div>
+            </div>
+            <div class="mx-auto flex items-center gap-0.5 rounded-full bg-surface-2 p-0.5">
+              <div class="rounded-full bg-elevated px-3 py-1 text-[13px] font-medium text-ink-1 shadow-xs">
+                Queue
+              </div>
+              <div class="rounded-full px-3 py-1 text-[13px] font-medium text-ink-3">
+                Recaps
+              </div>
+            </div>
+            <div class="size-7 rounded-full bg-surface-2"></div>
+          </div>
+
+          <!-- list of saved items -->
+          <div class="flex flex-col px-4">
+            <div class="px-4 pt-6 pb-2 text-xs font-medium text-ink-3">Today</div>
+            {
+              queue.map((item) => (
+                <div class="grid grid-cols-[52px_1fr_auto] items-center rounded-full py-1 pr-4 transition-colors duration-150 hover:bg-surface-2">
+                  <div class="py-2 pr-1 pl-4 select-none">
+                    <div class="flex size-5 items-center justify-center text-ink-3">
+                      {item.kind === "pdf" && (
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                          <path
+                            d="M12.75 4.75H7.75C6.64543 4.75 5.75 5.64543 5.75 6.75V17.25C5.75 18.3546 6.64543 19.25 7.75 19.25H16.25C17.3546 19.25 18.25 18.3546 18.25 17.25V10.25M12.75 4.75V8.25C12.75 9.35457 13.6454 10.25 14.75 10.25H18.25M12.75 4.75L18.25 10.25"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      )}
+                      {item.kind === "mail" && (
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M4.75 7.75C4.75 6.64543 5.64543 5.75 6.75 5.75H17.25C18.3546 5.75 19.25 6.64543 19.25 7.75V16.25C19.25 17.3546 18.3546 18.25 17.25 18.25H6.75C5.64543 18.25 4.75 17.3546 4.75 16.25V7.75Z"
+                          />
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M5.5 6.5L12 12.25L18.5 6.5"
+                          />
+                        </svg>
+                      )}
+                      {item.kind === "doc" && (
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M6.75 4.75H17.25C17.8 4.75 18.25 5.2 18.25 5.75V18.25C18.25 18.8 17.8 19.25 17.25 19.25H6.75C6.2 19.25 5.75 18.8 5.75 18.25V5.75C5.75 5.2 6.2 4.75 6.75 4.75Z"
+                          />
+                          <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8.75 9.25H15.25" />
+                          <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8.75 12.25H15.25" />
+                          <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8.75 15.25H12.25" />
+                        </svg>
+                      )}
+                    </div>
+                  </div>
+                  <div class="flex min-w-0 items-center gap-2 py-2 pr-2">
+                    <span class="line-clamp-1 text-sm font-medium text-ink-1">{item.title}</span>
+                    <span class="hidden shrink-0 text-sm text-ink-4 sm:inline">{item.meta}</span>
+                  </div>
+                </div>
+              ))
+            }
+
+            <!-- now playing strip -->
+            <div class="mt-4 flex items-center gap-3 rounded-xl bg-surface-2 px-4 py-3">
+              <button
+                class="grid size-9 flex-none place-items-center rounded-full bg-palette-800 text-palette-50"
+                >▶</button
+              >
+              <div class="min-w-0">
+                <div class="line-clamp-1 text-[13px] font-medium text-ink-1">Today's Recap · 7 min</div>
+                <div class="waveform mt-1 flex h-4 items-end gap-[2px]">
+                  {
+                    bars.map((b) => (
+                      <span
+                        class="flex-1 origin-bottom rounded-full bg-palette-400 animate-[var(--animate-wave)]"
+                        style={`height:${b.h}%;animation-delay:${b.delay}`}
+                      />
+                    ))
+                  }
+                </div>
+              </div>
+              <div class="ml-auto text-[12px] tabular-nums text-ink-3">2:14</div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="h-px"
+          style="background:linear-gradient(to right, transparent, var(--color-line), transparent)"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

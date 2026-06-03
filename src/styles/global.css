@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+/* Variable Inter via Fontsource */
+@import "@fontsource-variable/inter";
+
+/* ---- Theme tokens (warm "sunrise" palette — dawn blush → peach → gold) ---- */
+@theme {
+  --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+
+  /* Warm dawn scale */
+  --color-palette-50: #fff6ef;
+  --color-palette-100: #ffe9da;
+  --color-palette-200: #ffd5bd;
+  --color-palette-300: #ffb892;
+  --color-palette-400: #fb9168;
+  --color-palette-500: #ef6d45;
+  --color-palette-600: #d4502d;
+  --color-palette-700: #a83b25;
+  --color-palette-800: #6e2a1d;
+  --color-palette-900: #431a13;
+
+  /* Surfaces */
+  --color-surface: #fff4ea; /* page background (soft dawn) */
+  --color-surface-2: #ffe8d7; /* secondary fills */
+  --color-elevated: #fffaf5; /* cards / windows */
+  --color-line: #f6d9c2; /* hairline borders */
+
+  /* Text shades (primary → quaternary) */
+  --color-ink-1: #3a1f15;
+  --color-ink-2: #6e3b27;
+  --color-ink-3: #97604a;
+  --color-ink-4: #c79680;
+
+  /* Accent */
+  --color-tint: #f97316;
+
+  /* Waveform pulse */
+  --animate-wave: wave 1.5s ease-in-out infinite;
+
+  @keyframes wave {
+    0%,
+    100% {
+      transform: scaleY(0.35);
+    }
+    50% {
+      transform: scaleY(1);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* default border color → warm hairline */
+@layer base {
+  *,
+  ::after,
+  ::before {
+    border-color: var(--color-line);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .waveform span {
+    animation: none !important;
+    transform: scaleY(0.6) !important;
+  }
+}
