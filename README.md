@@ -1,6 +1,6 @@
 # briefly_landing
 
-The marketing landing page for **Morning Brief** (briefly) —
+The marketing landing page for **Recap** ([recap.am](https://recap.am)) —
 _save it now, hear it in the morning._
 
 Built with [Astro](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com).
@@ -44,5 +44,5 @@ npm run preview  # serve the production build locally
 (GitHub Pages, Netlify, Cloudflare Pages, S3, …).
 
 The call-to-action links live in `src/config.ts` and assume the app is at
-`https://app.briefly.sh`; update `appUrl` / `signUp` / `signIn` there if the
+`https://app.recap.am`; update `appUrl` / `signUp` / `signIn` there if the
 app domain differs.
