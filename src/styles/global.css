@@ -9,8 +9,8 @@
     sans-serif;
 
   /* Warm dawn scale */
-  --color-palette-50: #fff6ef;
-  --color-palette-100: #ffe9da;
+  --color-palette-50: #fff9f4;
+  --color-palette-100: #ffeee1;
   --color-palette-200: #ffd5bd;
   --color-palette-300: #ffb892;
   --color-palette-400: #fb9168;
@@ -21,8 +21,8 @@
   --color-palette-900: #431a13;
 
   /* Surfaces */
-  --color-surface: #fff4ea; /* page background (soft dawn) */
-  --color-surface-2: #ffe8d7; /* secondary fills */
+  --color-surface: #fff8f2; /* page background (soft dawn) */
+  --color-surface-2: #fff1e7; /* secondary fills */
   --color-elevated: #fffaf5; /* cards / windows */
   --color-line: #f6d9c2; /* hairline borders */
 
