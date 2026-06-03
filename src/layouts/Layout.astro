@@ -12,6 +12,8 @@ const {
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
+// Absolute URL — social platforms require a fully-qualified og:image.
+const ogImage = new URL("/og.png", Astro.site);
 ---
 
 <!doctype html>
@@ -25,12 +27,24 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Recap" />
-    <meta
-      property="og:description"
-      content="Save links during the day. Wake up to an AI-summarised podcast covering them."
-    />
+    <meta property="og:site_name" content="Recap" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Recap — today's news, recapped tomorrow."
+    />
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <meta name="theme-color" content="#fff8f2" />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
