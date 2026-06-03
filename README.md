@@ -20,9 +20,24 @@ src/
   pages/         index.astro    (assembles the components)
   styles/        global.css     (Tailwind import + theme tokens + waveform keyframes)
   config.ts      shared brand + app URLs
+scripts/
+  generate-og.mjs               (renders the social preview image)
 public/
   favicon.svg
+  og.png                        (1200×630 Open Graph / Twitter card image)
 ```
+
+## Social preview (Open Graph)
+
+`src/layouts/Layout.astro` sets the Open Graph + Twitter card meta so links
+to the site render a rich preview. The card image lives at `public/og.png`
+and is generated from the brand palette:
+
+```bash
+npm run og       # rewrites public/og.png from scripts/generate-og.mjs
+```
+
+Re-run it after changing the brand or tagline, then rebuild.
 
 ## Develop
 
