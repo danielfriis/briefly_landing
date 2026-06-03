@@ -16,9 +16,9 @@ const font = "Liberation Sans, DejaVu Sans, sans-serif";
 
 // Echo the podcast waveform from the landing hero as a quiet bottom accent.
 const bars = Array.from({ length: 48 }, (_, i) => {
-  const h = 12 + Math.round(46 * Math.abs(Math.sin(i * 1.27)));
+  const h = 10 + Math.round(34 * Math.abs(Math.sin(i * 1.27)));
   const x = 96 + i * 14;
-  return `<rect x="${x}" y="${566 - h}" width="6" height="${h}" rx="3" fill="#fb9168" opacity="0.9"/>`;
+  return `<rect x="${x}" y="${590 - h}" width="6" height="${h}" rx="3" fill="#fb9168" opacity="0.9"/>`;
 }).join("");
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
@@ -57,7 +57,8 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
   <text x="96" y="408" font-family="${font}" font-size="78" font-weight="700" fill="#3a1f15" letter-spacing="-1.5">recapped tomorrow.</text>
 
   <!-- subhead -->
-  <text x="98" y="470" font-family="${font}" font-size="34" font-weight="500" fill="#97604a">Wake up to an AI-summarised podcast of the links you saved.</text>
+  <text x="98" y="466" font-family="${font}" font-size="33" font-weight="500" fill="#97604a">Wake up to an AI-summarised podcast of the links</text>
+  <text x="98" y="510" font-family="${font}" font-size="33" font-weight="500" fill="#97604a">you save and the topics you follow.</text>
 
   <!-- waveform accent + url -->
   ${bars}
