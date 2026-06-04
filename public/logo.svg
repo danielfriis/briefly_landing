@@ -1,0 +1,12 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Briefly logo">
+  <!-- App icon shape -->
+  <rect width="512" height="512" rx="112" fill="#ffffff"/>
+  <g fill="#d4502d">
+    <!-- Ring -->
+    <path fill-rule="evenodd"
+          d="M256 68 A188 188 0 1 0 256 444 A188 188 0 1 0 256 68 Z
+             M256 106 A150 150 0 1 1 256 406 A150 150 0 1 1 256 106 Z"/>
+    <!-- Horizon infill bending upward, leaving the rising sun above -->
+    <path d="M119 318 Q256 222 393 318 A150 150 0 0 1 119 318 Z"/>
+  </g>
+</svg>
