@@ -1,0 +1,17 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Briefly logo">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd9c2"/><stop offset="1" stop-color="#fff4ea"/>
+    </linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fb9168"/><stop offset="1" stop-color="#d4502d"/>
+    </linearGradient>
+    <clipPath id="sq"><rect width="512" height="512" rx="112"/></clipPath>
+  </defs>
+  <!-- App-icon (squircle) background -->
+  <rect width="512" height="512" rx="112" fill="url(#sky)"/>
+  <!-- Upward-bending horizon overlaying the background -->
+  <g clip-path="url(#sq)">
+    <path d="M0 330 Q256 250 512 330 L512 512 L0 512 Z" fill="url(#hill)"/>
+  </g>
+</svg>
