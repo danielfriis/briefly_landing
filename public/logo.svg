@@ -1,13 +1,17 @@
 <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Briefly logo">
-  <g fill="#d4502d">
-    <!-- App-icon shape (squircle) drawn as a ring -->
-    <path fill-rule="evenodd" d="
-      M156 56 H356 A100 100 0 0 1 456 156 V356 A100 100 0 0 1 356 456
-      H156 A100 100 0 0 1 56 356 V156 A100 100 0 0 1 156 56 Z
-      M156 94 H356 A62 62 0 0 1 418 156 V356 A62 62 0 0 1 356 418
-      H156 A62 62 0 0 1 94 356 V156 A62 62 0 0 1 156 94 Z"/>
-    <!-- Horizon infill bending upward, leaving the rising sun above -->
-    <path d="M94 300 V356 A62 62 0 0 0 156 418 H356 A62 62 0 0 0 418 356 V300
-             Q256 204 94 300 Z"/>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd9c2"/><stop offset="1" stop-color="#fff4ea"/>
+    </linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fb9168"/><stop offset="1" stop-color="#d4502d"/>
+    </linearGradient>
+    <clipPath id="sq"><rect width="512" height="512" rx="112"/></clipPath>
+  </defs>
+  <!-- App-icon (squircle) background -->
+  <rect width="512" height="512" rx="112" fill="url(#sky)"/>
+  <!-- Upward-bending horizon overlaying the background -->
+  <g clip-path="url(#sq)">
+    <path d="M0 330 Q256 250 512 330 L512 512 L0 512 Z" fill="url(#hill)"/>
   </g>
 </svg>
