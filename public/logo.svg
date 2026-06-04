@@ -1,12 +1,13 @@
 <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Briefly logo">
-  <!-- App icon shape -->
-  <rect width="512" height="512" rx="112" fill="#ffffff"/>
   <g fill="#d4502d">
-    <!-- Ring -->
-    <path fill-rule="evenodd"
-          d="M256 68 A188 188 0 1 0 256 444 A188 188 0 1 0 256 68 Z
-             M256 106 A150 150 0 1 1 256 406 A150 150 0 1 1 256 106 Z"/>
+    <!-- App-icon shape (squircle) drawn as a ring -->
+    <path fill-rule="evenodd" d="
+      M156 56 H356 A100 100 0 0 1 456 156 V356 A100 100 0 0 1 356 456
+      H156 A100 100 0 0 1 56 356 V156 A100 100 0 0 1 156 56 Z
+      M156 94 H356 A62 62 0 0 1 418 156 V356 A62 62 0 0 1 356 418
+      H156 A62 62 0 0 1 94 356 V156 A62 62 0 0 1 156 94 Z"/>
     <!-- Horizon infill bending upward, leaving the rising sun above -->
-    <path d="M119 318 Q256 222 393 318 A150 150 0 0 1 119 318 Z"/>
+    <path d="M94 300 V356 A62 62 0 0 0 156 418 H356 A62 62 0 0 0 418 356 V300
+             Q256 204 94 300 Z"/>
   </g>
 </svg>
