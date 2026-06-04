@@ -28,27 +28,22 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
       <stop offset="100%" stop-color="#fff8f2"/>
     </linearGradient>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffd5bd"/>
+      <stop offset="0%" stop-color="#ffd9c2"/>
       <stop offset="100%" stop-color="#fff4ea"/>
     </linearGradient>
-    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#fb9168"/>
-      <stop offset="100%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#d4502d"/>
     </linearGradient>
+    <clipPath id="logo-sq"><rect width="64" height="64" rx="14"/></clipPath>
   </defs>
 
   <rect width="${W}" height="${H}" fill="url(#bg)"/>
 
-  <!-- brand: sunrise mark (scaled from favicon.svg) + wordmark -->
+  <!-- brand: app-icon logo (scaled from logo.svg) + wordmark -->
   <g transform="translate(96, 88) scale(1.5)">
     <rect width="64" height="64" rx="14" fill="url(#sky)"/>
-    <circle cx="32" cy="40" r="13" fill="url(#sun)"/>
-    <g stroke="#f97316" stroke-width="2.5" stroke-linecap="round">
-      <path d="M32 16v5"/>
-      <path d="M15 26l3.5 3.5"/>
-      <path d="M49 26l-3.5 3.5"/>
-    </g>
-    <rect x="10" y="40" width="44" height="3" rx="1.5" fill="#d4502d"/>
+    <path d="M0 41.25 Q32 31.25 64 41.25 L64 64 L0 64 Z" fill="url(#hill)" clip-path="url(#logo-sq)"/>
   </g>
   <text x="206" y="148" font-family="${font}" font-size="58" font-weight="700" fill="#3a1f15">Recap</text>
 
