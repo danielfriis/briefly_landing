@@ -3,37 +3,40 @@
 /* Variable Inter via Fontsource */
 @import "@fontsource-variable/inter";
 
-/* ---- Theme tokens (warm "sunrise" palette — dawn blush → peach → gold) ---- */
+/* ---- Theme tokens (warm neutral palette — near-white surfaces, one warm accent) ----
+   Kept in sync with the app (briefly/app/assets/tailwind/application.css).
+   Surfaces sit close to white; the warm scale is heavily desaturated so colour
+   reads as a quiet undertone rather than a wash. */
 @theme {
   --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto,
     sans-serif;
 
-  /* Warm dawn scale (saturation dialled back for a softer feel) */
-  --color-palette-50: #fef9f5;
-  --color-palette-100: #fceee4;
-  --color-palette-200: #f6d8c6;
-  --color-palette-300: #f0bda1;
-  --color-palette-400: #e39b80;
-  --color-palette-500: #d47b60;
-  --color-palette-600: #b96048;
-  --color-palette-700: #974636;
-  --color-palette-800: #633128;
-  --color-palette-900: #3d1e19;
+  /* Warm neutral scale (low chroma — barely-there warmth) */
+  --color-palette-50: #fcfaf9;
+  --color-palette-100: #f5f0ec;
+  --color-palette-200: #e8e0d9;
+  --color-palette-300: #d4c7bc;
+  --color-palette-400: #b8a698;
+  --color-palette-500: #9b897a;
+  --color-palette-600: #7f6d5f;
+  --color-palette-700: #635248;
+  --color-palette-800: #44352d;
+  --color-palette-900: #2b211c;
 
-  /* Surfaces */
-  --color-surface: #fef8f3; /* page background (soft dawn) */
-  --color-surface-2: #fcf1ea; /* secondary fills */
-  --color-elevated: #fefaf6; /* cards / windows */
-  --color-line: #f0dac8; /* hairline borders */
+  /* Surfaces (near-white) */
+  --color-surface: #fdfcfb; /* page background (off-white) */
+  --color-surface-2: #f7f4f1; /* secondary fills */
+  --color-elevated: #ffffff; /* cards / windows */
+  --color-line: #ece6e1; /* hairline borders */
 
   /* Text shades (primary → quaternary) */
-  --color-ink-1: #362119;
-  --color-ink-2: #673e2e;
-  --color-ink-3: #8f6352;
-  --color-ink-4: #c09987;
+  --color-ink-1: #2f2520;
+  --color-ink-2: #5a4d44;
+  --color-ink-3: #87776b;
+  --color-ink-4: #b4a89e;
 
-  /* Accent */
-  --color-tint: #d77938;
+  /* Accent (the one pop of colour) */
+  --color-tint: #cf7235;
 
   /* Waveform pulse */
   --animate-wave: wave 1.5s ease-in-out infinite;
