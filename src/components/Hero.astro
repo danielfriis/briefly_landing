@@ -45,11 +45,14 @@ const rotatingWords = [
             class="max-w-lg text-3xl font-medium tracking-[-0.5px] text-pretty text-ink-1 xl:text-4xl xl:tracking-[-0.7px]"
           >
             Your personal <span
-              id="rotating-word"
-              data-words={JSON.stringify(rotatingWords)}
-              class="text-palette-700 transition-[opacity,filter] duration-300 ease-out"
-              >{rotatingWords[0]}</span
-            > briefing
+              class="inline-flex overflow-hidden align-bottom"
+              ><span
+                id="rotating-word"
+                data-words={JSON.stringify(rotatingWords)}
+                class="font-semibold text-tint will-change-transform"
+                >{rotatingWords[0]}</span
+              ></span
+            ><br />briefing
           </h1>
           <p
             class="text-2xl font-medium tracking-[-0.2px] text-pretty text-ink-3 xl:text-3xl xl:tracking-[-0.4px]"
@@ -212,18 +215,38 @@ const rotatingWords = [
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
-    if (words.length > 1 && !reduceMotion) {
+    if (words.length > 1) {
       let i = 0;
-      setInterval(() => {
-        el.style.opacity = "0";
-        el.style.filter = "blur(4px)";
-        setTimeout(() => {
+
+      if (reduceMotion) {
+        // No motion — just swap the word in place.
+        setInterval(() => {
           i = (i + 1) % words.length;
           el.textContent = words[i];
-          el.style.opacity = "1";
-          el.style.filter = "blur(0)";
-        }, 300);
-      }, 2200);
+        }, 2600);
+      } else {
+        const DUR = 280;
+        const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
+
+        setInterval(() => {
+          // Slide the current word up and out of the clip window.
+          el.style.transition = `transform ${DUR}ms ${EASE}`;
+          el.style.transform = "translateY(-100%)";
+
+          setTimeout(() => {
+            i = (i + 1) % words.length;
+            // Swap the text and drop below the window, with no animation.
+            el.style.transition = "none";
+            el.textContent = words[i];
+            el.style.transform = "translateY(100%)";
+            // Force a reflow so the next change animates from this position.
+            void el.offsetWidth;
+            // Slide the new word up into place.
+            el.style.transition = `transform ${DUR}ms ${EASE}`;
+            el.style.transform = "translateY(0)";
+          }, DUR);
+        }, 2600);
+      }
     }
   }
 </script>
