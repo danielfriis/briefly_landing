@@ -7,7 +7,7 @@ interface Props {
 }
 
 const {
-  title = "Recap — Today's news, recapped tomorrow.",
+  title = "Briefing — Today's news, briefed tomorrow.",
   description = "Follow the topics you care about. Tomorrow morning, wake up to an AI-summarised podcast covering them — plus any links you saved, ready before your coffee.",
 } = Astro.props;
 
@@ -27,7 +27,7 @@ const ogImage = new URL("/og.png", Astro.site);
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Recap" />
+    <meta property="og:site_name" content="Briefing" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
@@ -36,7 +36,7 @@ const ogImage = new URL("/og.png", Astro.site);
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Recap — today's news, recapped tomorrow."
+      content="Briefing — today's news, briefed tomorrow."
     />
 
     <!-- Twitter / X card -->
