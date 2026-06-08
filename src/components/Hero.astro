@@ -17,6 +17,15 @@ const bars = Array.from({ length: 34 }, (_, i) => {
   const h = 32 + Math.round(46 * Math.abs(Math.sin(i * 1.27)));
   return { h, delay: `${((i % 7) * 0.11).toFixed(2)}s` };
 });
+
+const rotatingWords = [
+  "morning",
+  "evening",
+  "tech",
+  "politics",
+  "business",
+  "sports",
+];
 ---
 
 <section
@@ -35,7 +44,12 @@ const bars = Array.from({ length: 34 }, (_, i) => {
           <h1
             class="max-w-lg text-3xl font-medium tracking-[-0.5px] text-pretty text-ink-1 xl:text-4xl xl:tracking-[-0.7px]"
           >
-            Today's news, briefed tomorrow.
+            Your personal <span
+              id="rotating-word"
+              data-words={JSON.stringify(rotatingWords)}
+              class="text-palette-700 transition-[opacity,filter] duration-300 ease-out"
+              >{rotatingWords[0]}</span
+            > briefing
           </h1>
           <p
             class="text-2xl font-medium tracking-[-0.2px] text-pretty text-ink-3 xl:text-3xl xl:tracking-[-0.4px]"
@@ -189,3 +203,27 @@ const bars = Array.from({ length: 34 }, (_, i) => {
     </div>
   </div>
 </section>
+
+<script>
+  const el = document.getElementById("rotating-word");
+  if (el) {
+    const words: string[] = JSON.parse(el.dataset.words ?? "[]");
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (words.length > 1 && !reduceMotion) {
+      let i = 0;
+      setInterval(() => {
+        el.style.opacity = "0";
+        el.style.filter = "blur(4px)";
+        setTimeout(() => {
+          i = (i + 1) % words.length;
+          el.textContent = words[i];
+          el.style.opacity = "1";
+          el.style.filter = "blur(0)";
+        }, 300);
+      }, 2200);
+    }
+  }
+</script>
