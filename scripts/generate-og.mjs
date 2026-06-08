@@ -45,11 +45,11 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
     <rect width="64" height="64" rx="14" fill="url(#sky)"/>
     <path d="M0 41.25 Q32 31.25 64 41.25 L64 64 L0 64 Z" fill="url(#hill)" clip-path="url(#logo-sq)"/>
   </g>
-  <text x="206" y="148" font-family="${font}" font-size="58" font-weight="700" fill="#3a1f15">Recap</text>
+  <text x="206" y="148" font-family="${font}" font-size="58" font-weight="700" fill="#3a1f15">Briefing</text>
 
   <!-- headline -->
   <text x="96" y="320" font-family="${font}" font-size="78" font-weight="700" fill="#3a1f15" letter-spacing="-1.5">Today&#8217;s news,</text>
-  <text x="96" y="408" font-family="${font}" font-size="78" font-weight="700" fill="#3a1f15" letter-spacing="-1.5">recapped tomorrow.</text>
+  <text x="96" y="408" font-family="${font}" font-size="78" font-weight="700" fill="#3a1f15" letter-spacing="-1.5">briefed tomorrow.</text>
 
   <!-- subhead -->
   <text x="98" y="466" font-family="${font}" font-size="33" font-weight="500" fill="#97604a">Wake up to an AI-summarised podcast of the links</text>
@@ -57,7 +57,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
 
   <!-- waveform accent + url -->
   ${bars}
-  <text x="1104" y="556" text-anchor="end" font-family="${font}" font-size="30" font-weight="600" fill="#c79680">recap.am</text>
+  <text x="1104" y="556" text-anchor="end" font-family="${font}" font-size="30" font-weight="600" fill="#c79680">briefing.fm</text>
 </svg>`;
 
 await sharp(Buffer.from(svg)).png().toFile(out);

@@ -1,8 +1,8 @@
 // Central place for outward-facing links + brand bits.
 // Update appUrl if the application lives on a different domain.
 export const site = {
-  name: "Recap",
-  appUrl: "https://app.recap.am",
-  signUp: "https://app.recap.am/sign_up",
-  signIn: "https://app.recap.am/sign_in",
+  name: "Briefing",
+  appUrl: "https://app.briefing.fm",
+  signUp: "https://app.briefing.fm/sign_up",
+  signIn: "https://app.briefing.fm/sign_in",
 } as const;
