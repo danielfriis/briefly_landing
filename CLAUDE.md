@@ -26,9 +26,12 @@ replace it.
 - **Tagline:** _Put down the feed. Press play._ — names the enemy (the endless
   feed / doomscroll) and the relief (just listen). Audio-native and ownable; avoid
   reverting to generic category lines like "news that matters" or "signal not noise."
-- Calm, premium, and quiet — never breathless or hype-y. The aesthetic (warm
-  neutral palette, one orange accent, generous whitespace) is itself part of the
-  message: the antidote to noise.
+- Calm, premium, and quiet — never breathless or hype-y. The aesthetic (cool
+  near-white neutrals, near-black ink for crisp high-contrast type, one vivid
+  orange accent used sparingly, an editorial serif — Newsreader — for display
+  headings, and generous whitespace) is itself part of the message: the antidote
+  to noise. The shared design tokens live in `src/styles/global.css` and are kept
+  in sync with the app (`briefly/app/assets/tailwind/application.css`).
 - Centre the reader's curiosity ("the topics you're most curious about"), the
   overload problem, and the relief of cutting through it.
 
