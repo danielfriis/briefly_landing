@@ -1,17 +1,15 @@
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Briefing logo">
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Briefing">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffd9c2"/><stop offset="1" stop-color="#fff4ea"/>
+      <stop offset="0" stop-color="#fff6ee"/><stop offset="1" stop-color="#ffe7d6"/>
     </linearGradient>
-    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#fb9168"/><stop offset="1" stop-color="#d4502d"/>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff7c47"/><stop offset="1" stop-color="#e8420f"/>
     </linearGradient>
-    <clipPath id="sq"><rect width="512" height="512" rx="112"/></clipPath>
   </defs>
-  <!-- App-icon (squircle) background -->
-  <rect width="512" height="512" rx="112" fill="url(#sky)"/>
-  <!-- Upward-bending horizon overlaying the background -->
-  <g clip-path="url(#sq)">
-    <path d="M0 330 Q256 250 512 330 L512 512 L0 512 Z" fill="url(#hill)"/>
-  </g>
+  <!-- App-icon (squircle) dawn sky -->
+  <rect width="512" height="512" rx="116" fill="url(#sky)"/>
+  <!-- Rising sun: a bold dome above a horizon — minimal, reads at favicon size -->
+  <path d="M136 322 a120 120 0 0 1 240 0 Z" fill="url(#sun)"/>
+  <rect x="120" y="340" width="272" height="16" rx="8" fill="url(#sun)"/>
 </svg>
