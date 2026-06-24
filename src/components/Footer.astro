@@ -3,19 +3,19 @@ import { site } from "../config";
 const year = new Date().getFullYear();
 ---
 
-<footer class="relative py-24">
+<footer class="relative bg-palette-900 py-24 text-surface">
   <div class="relative mx-auto flex w-full max-w-2xl flex-col gap-8 px-4 py-8 text-sm sm:py-12">
-    <a href="/" class="mb-4 block select-none text-ink-1 sm:mx-auto">
+    <a href="/" class="mb-4 block select-none sm:mx-auto">
       <img src="/logo.svg" alt={site.name} width="28" height="28" class="size-7" />
     </a>
     <div class="flex flex-col flex-wrap gap-x-16 gap-y-4 sm:items-center sm:justify-center">
       <div class="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-4">
-        <a href={site.signIn} class="self-start text-ink-4 hover:text-ink-2">Sign in</a>
-        <a href={site.signUp} class="self-start text-ink-4 hover:text-ink-2">Get started</a>
-        <a href="#how" class="self-start text-ink-4 hover:text-ink-2">How it works</a>
-        <a href="#pricing" class="self-start text-ink-4 hover:text-ink-2">Pricing</a>
+        <a href={site.signIn} class="self-start text-palette-400 transition-colors hover:text-surface">Sign in</a>
+        <a href={site.signUp} class="self-start text-palette-400 transition-colors hover:text-surface">Get started</a>
+        <a href="#how" class="self-start text-palette-400 transition-colors hover:text-surface">How it works</a>
+        <a href="#pricing" class="self-start text-palette-400 transition-colors hover:text-surface">Pricing</a>
       </div>
-      <p class="text-ink-4 sm:text-center">© {year} {site.name}</p>
+      <p class="text-palette-500 sm:text-center">© {year} {site.name}</p>
     </div>
   </div>
 </footer>

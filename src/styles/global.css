@@ -3,40 +3,54 @@
 /* Variable Inter via Fontsource */
 @import "@fontsource-variable/inter";
 
-/* ---- Theme tokens (warm neutral palette — near-white surfaces, one warm accent) ----
+/* ---- Theme tokens (cool neutral palette — near-white surfaces, near-black ink,
+   one vivid accent + an editorial serif for display headings) ----
    Kept in sync with the app (briefly/app/assets/tailwind/application.css).
-   Surfaces sit close to white; the warm scale is heavily desaturated so colour
-   reads as a quiet undertone rather than a wash. */
+   Surfaces sit close to white and ink close to black for crisp, high-contrast
+   type; the neutral scale is cool/true-neutral so colour reads only from the
+   single warm accent. Display headings use a serif (Newsreader) against Inter
+   body — calm, premium, editorial. */
 @theme {
   --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto,
     sans-serif;
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
 
-  /* Warm neutral scale (low chroma — barely-there warmth) */
-  --color-palette-50: #fcfaf9;
-  --color-palette-100: #f5f0ec;
-  --color-palette-200: #e8e0d9;
-  --color-palette-300: #d4c7bc;
-  --color-palette-400: #b8a698;
-  --color-palette-500: #9b897a;
-  --color-palette-600: #7f6d5f;
-  --color-palette-700: #635248;
-  --color-palette-800: #44352d;
-  --color-palette-900: #2b211c;
+  /* Cool neutral scale (true-neutral with a faint slate undertone) */
+  --color-palette-50: #f7f7f8;
+  --color-palette-100: #ececed;
+  --color-palette-200: #e0e1e4;
+  --color-palette-300: #c7c8cd;
+  --color-palette-400: #a5a7af;
+  --color-palette-500: #80838c;
+  --color-palette-600: #5d606a;
+  --color-palette-700: #43454e;
+  --color-palette-800: #26282e;
+  --color-palette-900: #141519;
 
-  /* Surfaces (near-white) */
-  --color-surface: #fdfcfb; /* page background (off-white) */
-  --color-surface-2: #f7f4f1; /* secondary fills */
+  /* Surfaces (near-white, cool) */
+  --color-surface: #fafafb; /* page background */
+  --color-surface-2: #eff0f2; /* secondary fills */
   --color-elevated: #ffffff; /* cards / windows */
-  --color-line: #ece6e1; /* hairline borders */
+  --color-line: #e5e6ea; /* hairline borders */
 
-  /* Text shades (primary → quaternary) */
-  --color-ink-1: #2f2520;
-  --color-ink-2: #5a4d44;
-  --color-ink-3: #87776b;
-  --color-ink-4: #b4a89e;
+  /* Text shades (primary → quaternary), high contrast */
+  --color-ink-1: #14151a;
+  --color-ink-2: #3c3f47;
+  --color-ink-3: #696d77;
+  --color-ink-4: #9b9fa9;
 
-  /* Accent (the one pop of colour) */
-  --color-tint: #cf7235;
+  /* Accent (the one pop of colour) — a vivid warm orange */
+  --color-tint: #ff4d1f;
+  --color-tint-50: #fff4ef;
+  --color-tint-100: #ffe4d9;
+  --color-tint-200: #ffc9b5;
+  --color-tint-600: #ed3d10;
+  --color-tint-700: #bf3712; /* accent text on light surfaces (AA) */
+
+  /* Soft, cool shadows */
+  --shadow-soft: 0 1px 2px rgba(20, 21, 26, 0.05);
+  --shadow-card: 0 1px 2px rgba(20, 21, 26, 0.04),
+    0 8px 24px rgba(20, 21, 26, 0.06);
 
   /* Waveform pulse */
   --animate-wave: wave 1.5s ease-in-out infinite;
@@ -60,7 +74,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* default border color → warm hairline */
+/* Serif display headings: optical sizing + tighter tracking for big type */
+.font-display {
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
+}
+
+/* default border color → cool hairline */
 @layer base {
   *,
   ::after,

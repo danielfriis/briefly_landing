@@ -42,7 +42,7 @@ const rotatingWords = [
         <!-- headline + subhead -->
         <div class="flex flex-col gap-4">
           <h1
-            class="max-w-lg text-3xl font-medium tracking-[-0.5px] text-pretty text-ink-1 xl:text-4xl xl:tracking-[-0.7px]"
+            class="max-w-xl font-display text-4xl font-medium text-pretty text-ink-1 xl:text-5xl"
           >
             Put down the feed.<br />Press play on <span
               class="inline-flex overflow-hidden align-bottom"
@@ -68,12 +68,12 @@ const rotatingWords = [
         <div class="flex flex-wrap gap-2">
           <a
             href={site.signUp}
-            class="inline-flex h-10 select-none items-center justify-center gap-1.5 self-center rounded-lg bg-palette-800 px-4 text-sm font-medium text-palette-50 shadow-lg transition-colors hover:bg-palette-700"
+            class="inline-flex h-11 select-none items-center justify-center gap-1.5 self-center rounded-full bg-palette-800 px-5 text-sm font-medium text-palette-50 shadow-sm transition-colors hover:bg-palette-700"
             >Start for free</a
           >
           <a
             href="#how"
-            class="inline-flex h-10 select-none items-center justify-center gap-1.5 self-center rounded-lg bg-palette-200/80 px-4 text-sm font-medium text-ink-1 transition-colors hover:bg-palette-200"
+            class="inline-flex h-11 select-none items-center justify-center gap-1.5 self-center rounded-full bg-palette-200/80 px-5 text-sm font-medium text-ink-1 transition-colors hover:bg-palette-200"
             >How it works</a
           >
         </div>
@@ -188,7 +188,7 @@ const rotatingWords = [
                   {
                     bars.map((b) => (
                       <span
-                        class="flex-1 origin-bottom rounded-full bg-palette-400 animate-[var(--animate-wave)]"
+                        class="flex-1 origin-bottom rounded-full bg-tint animate-[var(--animate-wave)]"
                         style={`height:${b.h}%;animation-delay:${b.delay}`}
                       />
                     ))
