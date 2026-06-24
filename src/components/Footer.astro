@@ -1,5 +1,6 @@
 ---
 import { site } from "../config";
+import Brand from "./Brand.astro";
 const year = new Date().getFullYear();
 
 const cols = [
@@ -27,9 +28,7 @@ const cols = [
     <div class="flex flex-col gap-10 sm:flex-row sm:justify-between">
       <!-- brand -->
       <div class="flex max-w-xs flex-col gap-4">
-        <a href="/" class="flex select-none items-center">
-          <span class="font-display text-2xl font-semibold tracking-[-0.01em] text-ink-1">{site.name}</span>
-        </a>
+        <Brand size="lg" />
         <p class="font-display text-lg text-ink-3">
           Put down the feed. Press play.
         </p>

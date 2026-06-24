@@ -9,12 +9,12 @@
    Surfaces sit on a warm off-white "cream" and ink close to black for crisp,
    high-contrast type; the neutral scale is a warm stone so the page reads calm
    and paper-like — the antidote to a cold, glowing feed — with colour coming
-   only from the single orange accent. Display headings use a serif (Newsreader)
-   against Inter body — calm, premium, editorial. */
+   only from the single orange accent. Display headings use a serif (Noto Serif
+   Oriya) against Inter body — calm, premium, editorial. */
 @theme {
   --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto,
     sans-serif;
-  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-display: "Noto Serif Oriya", Georgia, "Times New Roman", serif;
 
   /* Warm stone neutral scale (near-neutral with a faint warm undertone) */
   --color-palette-50: #f7f4ef;
@@ -80,15 +80,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Serif display headings: optical sizing, tighter tracking, and one consistent
+/* Serif display headings: optical sizing, tight tracking, and one consistent
    line-height for big type. Without this, Tailwind's per-size defaults leak
    through (text-5xl → 1.0, text-4xl → 1.11, text-xl → 1.4), so multi-line serif
-   headings read unevenly — some cramped, some loose. 1.1 is tight enough to feel
-   "set" while clearing the serif's descenders. */
+   headings read unevenly — some cramped, some loose. Tracking (-0.021em) and
+   line-height (1.15) are tuned toward palette.team's display system (their serif
+   headings run ~-0.02/-0.03em tracking at ~1.25 lh); 1.15 keeps Briefing's
+   larger hero from feeling loose while still reading "set" and editorial. */
 .font-display {
   font-optical-sizing: auto;
-  letter-spacing: -0.012em;
-  line-height: 1.1;
+  letter-spacing: -0.021em;
+  line-height: 1.15;
 }
 
 /* default border color → warm hairline; warm text selection */

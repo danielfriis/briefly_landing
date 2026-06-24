@@ -29,8 +29,8 @@ replace it.
 - Calm, premium, and quiet — never breathless or hype-y. The aesthetic (warm
   cream neutrals — a paper-like off-white that reads as the calm antidote to a
   cold, glowing feed — near-black ink for crisp high-contrast type, one vivid
-  orange accent used sparingly, an editorial serif — Newsreader — for display
-  headings, and generous whitespace) is itself part of the message: the antidote
+  orange accent used sparingly, an editorial serif — Noto Serif Oriya — for
+  display headings, and generous whitespace) is itself part of the message: the antidote
   to noise. The shared design tokens live in `src/styles/global.css`. (They were
   previously kept in sync with the app's cool neutrals at
   `briefly/app/assets/tailwind/application.css`; the landing now intentionally
@@ -87,10 +87,12 @@ than ad-hoc values.
   buttons use `palette-800`). One vivid orange accent: `tint` `#ff4612` with a
   50–700 ramp — `tint-700` is the AA-safe accent for eyebrows/links on light,
   `tint` for fills, the rotating hero word, waveforms, and `hero-glow`.
-- **Type.** Inter (body, `--font-sans`) + Newsreader serif (display,
-  `--font-display` / `.font-display`). Every serif display heading shares one
-  line-height (1.1) and tight tracking via `.font-display`. The brand wordmark
-  is the serif "Briefing".
+- **Type.** Inter (body, `--font-sans`) + Noto Serif Oriya (display,
+  `--font-display` / `.font-display`; its Latin subset is a refined,
+  high-contrast editorial serif). Every serif display heading shares one
+  line-height (1.15) and tight tracking (-0.021em) via `.font-display` — tuned
+  toward palette.team's display system. The brand **wordmark is sans-serif**
+  (Inter semibold "Briefing"); the serif is reserved for headings.
 - **Layout & rhythm.** A wide contained shell (`max-w-6xl`) with text held to
   `max-w-2xl`/`max-w-3xl`, full-bleed product mockups, and generous whitespace
   between sections. The header is sticky and transparent over the hero, frosting
@@ -102,9 +104,12 @@ than ad-hoc values.
   product imagery, native `<details>` FAQ accordions, visible `:focus-visible`
   rings in `tint`, and `prefers-reduced-motion` honoured (waveform + rotating
   word). Aim for AA contrast and keep decorative mockups `aria-hidden`.
-- **Mark — wordmark-led.** The serif "Briefing" is the identity. The icon is a
-  minimal rising-sun mark (`public/logo.svg`) used only for the favicon / app
-  icon / OG card (`scripts/generate-og.mjs`).
+- **Mark — boom-box + sans wordmark.** The identity is a minimal Lucide
+  "boom-box" mark (audio-native — it signals "press play") beside the sans-serif
+  "Briefing" wordmark, shared via `src/components/Brand.astro` (header + footer).
+  The mark is accent-orange, tying the logo to the play button and waveform. The
+  app-icon / favicon (`public/logo.svg`) and OG card (`scripts/generate-og.mjs`)
+  reuse the boom-box on a warm near-black tile with orange speaker dots.
 
 ## Keep this file current
 

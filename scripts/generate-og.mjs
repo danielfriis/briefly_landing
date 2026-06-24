@@ -12,13 +12,12 @@ const out = resolve(__dirname, "../public/og.png");
 
 const W = 1200;
 const H = 630;
-// Inter-like sans for the tagline; an editorial serif for the wordmark —
-// mirrors the site's Inter + Newsreader pairing.
+// Inter-like sans for both the wordmark and the tagline — mirrors the site's
+// sans-serif "Briefing" lockup (the editorial serif is reserved for headings).
 const sans = "Inter, Liberation Sans, DejaVu Sans, sans-serif";
-const serif = "Newsreader, DejaVu Serif, Liberation Serif, Georgia, serif";
 
-// Clean, centred brand card: the app-icon logo, the wordmark, and the
-// tagline — nothing else competing for attention. Warm cream canvas,
+// Clean, centred brand card: the boom-box app mark, the sans wordmark, and
+// the tagline — nothing else competing for attention. Warm cream canvas,
 // near-black ink, one vivid orange accent.
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <defs>
@@ -26,28 +25,32 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
       <stop offset="0%" stop-color="#f2efe8"/>
       <stop offset="100%" stop-color="#fbf9f5"/>
     </linearGradient>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#fff6ee"/>
-      <stop offset="100%" stop-color="#ffe7d6"/>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#241f19"/>
+      <stop offset="100%" stop-color="#15110d"/>
     </linearGradient>
-    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ff6d3c"/>
-      <stop offset="100%" stop-color="#ed3a0c"/>
-    </linearGradient>
-    <clipPath id="logo-sq"><rect width="64" height="64" rx="14"/></clipPath>
   </defs>
 
   <rect width="${W}" height="${H}" fill="url(#bg)"/>
 
-  <!-- minimal rising-sun mark (matches logo.svg), centred above the wordmark -->
-  <g transform="translate(553, 196) scale(1.5)">
-    <rect width="64" height="64" rx="15" fill="url(#sky)"/>
-    <path d="M17 40 a15 15 0 0 1 30 0 Z" fill="url(#hill)"/>
-    <rect x="15.5" y="42.5" width="33" height="2.6" rx="1.3" fill="url(#hill)"/>
+  <!-- boom-box app mark (matches logo.svg), centred above the wordmark -->
+  <g transform="translate(552, 196) scale(1.5)">
+    <rect width="64" height="64" rx="15" fill="url(#tile)"/>
+    <g transform="translate(8,8) scale(2)" fill="none" stroke="#fbf9f5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 9V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/>
+      <path d="M8 8v1"/><path d="M12 8v1"/><path d="M16 8v1"/>
+      <rect width="20" height="12" x="2" y="9" rx="2"/>
+      <circle cx="8" cy="15" r="2"/>
+      <circle cx="16" cy="15" r="2"/>
+    </g>
+    <g transform="translate(8,8) scale(2)">
+      <circle cx="8" cy="15" r="1" fill="#ff4612"/>
+      <circle cx="16" cy="15" r="1" fill="#ff4612"/>
+    </g>
   </g>
 
-  <!-- wordmark (serif) -->
-  <text x="600" y="408" text-anchor="middle" font-family="${serif}" font-size="80" font-weight="600" fill="#1c1815" letter-spacing="-1">Briefing</text>
+  <!-- wordmark (sans-serif) -->
+  <text x="600" y="408" text-anchor="middle" font-family="${sans}" font-size="78" font-weight="700" fill="#1c1815" letter-spacing="-3">Briefing</text>
 
   <!-- tagline -->
   <text x="600" y="470" text-anchor="middle" font-family="${sans}" font-size="34" font-weight="500" fill="#726b61">Put down the feed. Press play.</text>

@@ -1,0 +1,42 @@
+---
+import { site } from "../config";
+
+// Brand lockup: a minimal Lucide "boom-box" mark (audio-native — it says
+// "press play" before a word is read) beside the sans-serif "Briefing"
+// wordmark. The serif is reserved for editorial display headings; the identity
+// itself is set in Inter for a crisp, modern lockup. Accent-orange mark = the
+// one warm pop, tying the logo to the play button and waveform elsewhere.
+interface Props {
+  size?: "md" | "lg";
+  class?: string;
+}
+const { size = "md", class: cls = "" } = Astro.props;
+const icon = size === "lg" ? 26 : 22;
+const word = size === "lg" ? "text-[22px]" : "text-[19px]";
+---
+
+<a href="/" class:list={["group flex select-none items-center gap-2", cls]}>
+  <svg
+    width={icon}
+    height={icon}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="text-tint"
+    aria-hidden="true"
+  >
+    <path d="M4 9V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"></path>
+    <path d="M8 8v1"></path>
+    <path d="M12 8v1"></path>
+    <path d="M16 8v1"></path>
+    <rect width="20" height="12" x="2" y="9" rx="2"></rect>
+    <circle cx="8" cy="15" r="2"></circle>
+    <circle cx="16" cy="15" r="2"></circle>
+  </svg>
+  <span class:list={[word, "font-semibold tracking-[-0.02em] text-ink-1"]}
+    >{site.name}</span
+  >
+</a>
