@@ -1,13 +1,8 @@
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Briefing">
-  <defs>
-    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#241f19"/><stop offset="1" stop-color="#15110d"/>
-    </linearGradient>
-  </defs>
-  <!-- App-icon (squircle) on a warm near-black tile -->
-  <rect width="512" height="512" rx="116" fill="url(#tile)"/>
-  <!-- Lucide "boom-box": audio-native mark — recognisable even at favicon size -->
-  <g transform="translate(76,76) scale(15)" fill="none" stroke="#fbf9f5" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="briefing.fm">
+  <!-- App-icon (squircle): white tile, hairline border so it reads on light backgrounds -->
+  <rect x="3" y="3" width="506" height="506" rx="114" fill="#ffffff" stroke="#e8e3da" stroke-width="6"/>
+  <!-- Lucide "boom-box" in the brand orange — the same outline as the navbar mark -->
+  <g transform="translate(76,76) scale(15)" fill="none" stroke="#ff4612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4 9V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/>
     <path d="M8 8v1"/>
     <path d="M12 8v1"/>
@@ -15,10 +10,5 @@
     <rect width="20" height="12" x="2" y="9" rx="2"/>
     <circle cx="8" cy="15" r="2"/>
     <circle cx="16" cy="15" r="2"/>
-  </g>
-  <!-- the one warm pop: orange speaker centres -->
-  <g transform="translate(76,76) scale(15)">
-    <circle cx="8" cy="15" r="1" fill="#ff4612"/>
-    <circle cx="16" cy="15" r="1" fill="#ff4612"/>
   </g>
 </svg>
