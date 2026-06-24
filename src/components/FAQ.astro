@@ -1,0 +1,55 @@
+---
+const faqs = [
+  {
+    q: "What exactly is Briefing?",
+    a: "A short news podcast, made just for you, waiting every morning. You choose the topics you're curious about; Briefing does the reading overnight and hands you only the headlines that matter — in one calm listen, usually five to ten minutes.",
+  },
+  {
+    q: "Where do the stories come from?",
+    a: "Overnight, AI reads across the live web on the topics you follow, keeps only what's genuinely worth knowing, and writes it into a tight radio script. Each story keeps its source, so you can always see — and open — where it came from.",
+  },
+  {
+    q: "Which podcast app do I listen in?",
+    a: "Whichever you already use. Briefing gives you a private podcast feed you add once to Apple Podcasts, Overcast, Pocket Casts, Spotify, or anything that takes an RSS link. New briefings then appear automatically each morning.",
+  },
+  {
+    q: "Can I add my own articles?",
+    a: "Yes. Drop any link — an article, newsletter, or PDF — into your next briefing and it's summarised right alongside the topics you follow, so the one thing you didn't want to miss never gets lost.",
+  },
+  {
+    q: "Is my account private?",
+    a: "Completely. Your topics and your feed are yours alone, secured by a secret link you can rotate at any time. There's no public profile and no social graph — just your briefing.",
+  },
+  {
+    q: "What does it cost?",
+    a: "Briefing is free while we're in beta. After that it's $9/month, with a 7-day free trial — and no card needed to hear your very first briefing.",
+  },
+];
+---
+
+<section id="faq" class="mx-auto w-full max-w-3xl px-4 sm:px-6">
+  <div class="flex flex-col gap-3 text-center">
+    <p class="text-xs font-semibold tracking-widest text-tint-700 uppercase">FAQ</p>
+    <h2 class="font-display text-3xl font-medium text-balance text-ink-1 sm:text-4xl">
+      Common questions
+    </h2>
+  </div>
+
+  <div class="mt-10 flex flex-col">
+    {
+      faqs.map((f, i) => (
+        <details class={`group ${i > 0 ? "border-t border-line" : ""}`} name="faq">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-left [&::-webkit-details-marker]:hidden">
+            <span class="text-lg font-medium text-ink-1">{f.q}</span>
+            <span class="faq-chevron grid size-7 flex-none place-items-center rounded-full border border-line text-ink-3 group-hover:text-ink-1">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" /></svg>
+            </span>
+          </summary>
+          <p class="max-w-2xl pr-10 pb-5 text-[15px] leading-relaxed text-pretty text-ink-3">
+            {f.a}
+          </p>
+        </details>
+      ))
+    }
+  </div>
+</section>

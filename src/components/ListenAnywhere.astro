@@ -1,0 +1,43 @@
+---
+// Honest trust band: Briefing is delivered as a private podcast feed, so it
+// plays in the apps people already use. (No customer logos — we're in beta.)
+const apps = [
+  { name: "Apple Podcasts", glyph: "podcast" },
+  { name: "Overcast", glyph: "wave" },
+  { name: "Pocket Casts", glyph: "play" },
+  { name: "Spotify", glyph: "spotify" },
+  { name: "Any app via RSS", glyph: "rss" },
+];
+---
+
+<section id="listen" class="mx-auto w-full max-w-5xl px-4 sm:px-6">
+  <p class="text-center text-xs font-semibold tracking-widest text-ink-3 uppercase">
+    Lands in your podcast app each morning
+  </p>
+  <div class="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-12">
+    {
+      apps.map((app) => (
+        <div class="flex items-center gap-2 text-ink-3 grayscale transition-colors hover:text-ink-1">
+          <span class="text-ink-3">
+            {app.glyph === "podcast" && (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="2.25" stroke="currentColor" stroke-width="1.6" /><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M8.5 14.5a5 5 0 1 1 7 0M10.5 18.75c.4-2 .6-3 1.5-3s1.1 1 1.5 3c.2 1-.5 1.5-1.5 1.5s-1.7-.5-1.5-1.5Z" /></svg>
+            )}
+            {app.glyph === "wave" && (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M5 12h0M8.5 8.5v7M12 6v12M15.5 8.5v7M19 12h0" /></svg>
+            )}
+            {app.glyph === "play" && (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7.25" stroke="currentColor" stroke-width="1.6" /><path fill="currentColor" d="M10.5 9.3 14.5 12l-4 2.7z" /></svg>
+            )}
+            {app.glyph === "spotify" && (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7.25" stroke="currentColor" stroke-width="1.6" /><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M8.5 10c2.5-.6 4.8-.3 6.8.9M9 12.6c2-.4 3.7-.2 5.2.7M9.4 15c1.5-.3 2.8-.1 3.9.5" /></svg>
+            )}
+            {app.glyph === "rss" && (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5.75 5.75c7.15 0 12.5 5.35 12.5 12.5M5.75 11.25c3.85 0 7 3.15 7 7" /><circle cx="6.5" cy="17.5" r="1.4" fill="currentColor" /></svg>
+            )}
+          </span>
+          <span class="text-sm font-semibold tracking-tight">{app.name}</span>
+        </div>
+      ))
+    }
+  </div>
+</section>

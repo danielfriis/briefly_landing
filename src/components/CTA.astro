@@ -1,47 +1,66 @@
 ---
 import { site } from "../config";
+
+const included = [
+  "Follow unlimited topics, researched on the live web",
+  "One short AI-written podcast briefing every morning",
+  "Save your own article links to any briefing",
+  "A private feed for any podcast app",
+  "Generate an extra briefing on demand",
+  "A secret link you can rotate any time",
+];
 ---
 
-<section id="pricing" class="mx-auto flex w-full max-w-2xl flex-col gap-8 px-4 py-8 sm:py-12">
-  <div class="flex flex-col gap-1">
+<section id="pricing" class="mx-auto w-full max-w-5xl px-4 sm:px-6">
+  <div class="flex flex-col items-center gap-3 text-center">
     <p class="text-xs font-semibold tracking-widest text-tint-700 uppercase">Pricing</p>
-    <h2 class="font-display text-3xl font-medium text-ink-1">Try it free for 7 days, then $9/month.</h2>
+    <h2 class="font-display text-3xl font-medium text-balance text-ink-1 sm:text-4xl">
+      Try it free for 7 days, then $9/month.
+    </h2>
+    <p class="max-w-xl text-lg text-pretty text-ink-3">
+      One simple plan. Everything you're curious about, in one calm briefing each
+      morning.
+    </p>
   </div>
 
-  <div class="flex flex-col gap-2 rounded-2xl border bg-elevated p-7 shadow-card">
-    <div class="flex flex-col gap-1">
-      <p class="font-display text-4xl font-medium text-ink-1">Free during beta</p>
-      <div class="flex items-baseline gap-0.5 text-ink-4 line-through">
-        <p class="font-display text-3xl font-medium">$9</p>
-        <p class="text-2xl font-medium">/mo</p>
+  <div class="mx-auto mt-12 grid max-w-4xl grid-cols-1 overflow-hidden rounded-3xl border border-line bg-elevated shadow-card md:grid-cols-2">
+    <!-- price / CTA -->
+    <div class="flex flex-col gap-5 border-line p-8 max-md:border-b md:border-r sm:p-10">
+      <div class="flex flex-col gap-1">
+        <p class="text-sm font-medium text-ink-3">Briefing</p>
+        <p class="font-display text-4xl font-medium text-ink-1">Free during beta</p>
+        <div class="flex items-baseline gap-1 text-ink-3">
+          <span class="text-lg line-through">$9</span>
+          <span class="text-sm line-through">/month</span>
+          <span class="ml-1 text-sm font-medium text-tint-700">while in beta</span>
+        </div>
       </div>
+      <p class="text-[15px] leading-relaxed text-pretty text-ink-3">
+        Press play on everything you're curious about. Start with a 7-day free
+        trial — no card needed to hear your first briefing.
+      </p>
+      <a
+        href={site.signUp}
+        class="mt-auto inline-flex h-12 select-none items-center justify-center gap-1.5 rounded-full bg-palette-800 px-6 text-[15px] font-medium text-palette-50 shadow-sm transition-colors hover:bg-palette-700"
+        >Start 7-day free trial</a
+      >
     </div>
-    <p class="max-w-md text-lg text-balance text-ink-2">
-      Press play on everything you're curious about. Follow unlimited topics, save your own links, and get a daily briefing in your private podcast feed.
-      Start with a 7-day free trial — no card needed to listen to your first briefing.
-    </p>
-    <ul class="mt-6 mb-6 flex flex-1 flex-col gap-2 text-base text-ink-3">
-      {
-        [
-          "Follow unlimited topics, researched on the live web",
-          "Daily AI-summarised podcast briefing",
-          "Save your own article links to any briefing",
-          "Private feed for any podcast app",
-          "Generate a briefing on demand",
-        ].map((f) => (
-          <li class="flex items-center gap-1.5">
-            <svg width="22" height="22" viewBox="0 0 24 24" class="shrink-0 text-tint" fill="none">
-              <path d="m7 13 3 3c1.5-5.5 6-9 6-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <span>{f}</span>
-          </li>
-        ))
-      }
-    </ul>
-    <a
-      href={site.signUp}
-      class="inline-flex h-11 select-none items-center justify-center gap-1.5 self-start rounded-full bg-palette-800 px-5 text-sm font-medium text-palette-50 shadow-sm transition-colors hover:bg-palette-700"
-      >Start 7-day free trial</a
-    >
+
+    <!-- what's included -->
+    <div class="flex flex-col gap-4 bg-surface/50 p-8 sm:p-10">
+      <p class="text-xs font-semibold tracking-widest text-ink-3 uppercase">What's included</p>
+      <ul class="flex flex-col gap-3 text-[15px] text-ink-2">
+        {
+          included.map((f) => (
+            <li class="flex items-start gap-2.5">
+              <svg width="22" height="22" viewBox="0 0 24 24" class="mt-px shrink-0 text-tint" fill="none">
+                <path d="m7 13 3 3c1.5-5.5 6-9 6-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>{f}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
 </section>

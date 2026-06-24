@@ -1,18 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
+import ListenAnywhere from "../components/ListenAnywhere.astro";
 import HowItWorks from "../components/HowItWorks.astro";
 import Features from "../components/Features.astro";
+import FeatureGrid from "../components/FeatureGrid.astro";
 import CTA from "../components/CTA.astro";
+import FAQ from "../components/FAQ.astro";
+import FinalCTA from "../components/FinalCTA.astro";
 import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
-  <main class="flex flex-col gap-16 sm:gap-24">
+  <Header />
+  <main class="flex flex-col gap-20 sm:gap-28">
     <Hero />
+    <ListenAnywhere />
     <HowItWorks />
     <Features />
+    <FeatureGrid />
     <CTA />
+    <FAQ />
+    <FinalCTA />
   </main>
   <Footer />
 </Layout>

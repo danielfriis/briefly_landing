@@ -1,21 +1,65 @@
 ---
 import { site } from "../config";
 const year = new Date().getFullYear();
+
+const cols = [
+  {
+    title: "Product",
+    links: [
+      { label: "How it works", href: "#how" },
+      { label: "Listen", href: "#listen" },
+      { label: "Pricing", href: "#pricing" },
+      { label: "FAQ", href: "#faq" },
+    ],
+  },
+  {
+    title: "Account",
+    links: [
+      { label: "Start for free", href: site.signUp },
+      { label: "Sign in", href: site.signIn },
+    ],
+  },
+];
 ---
 
-<footer class="relative bg-palette-900 py-24 text-surface">
-  <div class="relative mx-auto flex w-full max-w-2xl flex-col gap-8 px-4 py-8 text-sm sm:py-12">
-    <a href="/" class="mb-4 block select-none sm:mx-auto">
-      <img src="/logo.svg" alt={site.name} width="28" height="28" class="size-7" />
-    </a>
-    <div class="flex flex-col flex-wrap gap-x-16 gap-y-4 sm:items-center sm:justify-center">
-      <div class="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-4">
-        <a href={site.signIn} class="self-start text-palette-400 transition-colors hover:text-surface">Sign in</a>
-        <a href={site.signUp} class="self-start text-palette-400 transition-colors hover:text-surface">Get started</a>
-        <a href="#how" class="self-start text-palette-400 transition-colors hover:text-surface">How it works</a>
-        <a href="#pricing" class="self-start text-palette-400 transition-colors hover:text-surface">Pricing</a>
+<footer class="bg-palette-900 text-surface">
+  <div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 py-16 sm:px-6 sm:py-20">
+    <div class="flex flex-col gap-10 sm:flex-row sm:justify-between">
+      <!-- brand -->
+      <div class="flex max-w-xs flex-col gap-4">
+        <a href="/" class="flex select-none items-center gap-2">
+          <img src="/logo.svg" alt="" width="28" height="28" class="size-7" />
+          <span class="text-lg font-semibold tracking-tight text-surface">{site.name}</span>
+        </a>
+        <p class="font-display text-lg text-palette-300">
+          Put down the feed. Press play.
+        </p>
       </div>
-      <p class="text-palette-500 sm:text-center">© {year} {site.name}</p>
+
+      <!-- link columns -->
+      <div class="flex gap-16">
+        {
+          cols.map((col) => (
+            <div class="flex flex-col gap-3">
+              <p class="text-xs font-semibold tracking-widest text-palette-400 uppercase">{col.title}</p>
+              <ul class="flex flex-col gap-2.5">
+                {col.links.map((l) => (
+                  <li>
+                    <a href={l.href} class="text-sm text-palette-300 transition-colors hover:text-surface">
+                      {l.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2 border-t border-palette-800 pt-8 text-sm text-palette-400 sm:flex-row sm:items-center sm:justify-between">
+      <p>© {year} {site.name}</p>
+      <p>One calm briefing each morning.</p>
     </div>
   </div>
 </footer>

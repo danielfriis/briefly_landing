@@ -1,0 +1,69 @@
+---
+import { site } from "../config";
+
+const nav = [
+  { label: "How it works", href: "#how" },
+  { label: "Listen", href: "#listen" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "FAQ", href: "#faq" },
+];
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-transparent transition-colors duration-300"
+  data-site-header
+>
+  <div
+    class="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6"
+  >
+    <!-- wordmark -->
+    <a href="/" class="flex select-none items-center gap-2">
+      <img src="/logo.svg" alt="" width="28" height="28" class="size-7" />
+      <span class="text-[17px] font-semibold tracking-tight text-ink-1">{site.name}</span>
+    </a>
+
+    <!-- nav -->
+    <nav class="hidden items-center gap-7 md:flex">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class="text-sm font-medium text-ink-3 transition-colors hover:text-ink-1"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <!-- actions -->
+    <div class="flex items-center gap-1.5 sm:gap-2">
+      <a
+        href={site.signIn}
+        class="hidden h-9 items-center rounded-full px-3 text-sm font-medium text-ink-2 transition-colors hover:text-ink-1 sm:inline-flex"
+        >Sign in</a
+      >
+      <a
+        href={site.signUp}
+        class="inline-flex h-9 select-none items-center justify-center rounded-full bg-palette-800 px-4 text-sm font-medium text-palette-50 shadow-sm transition-colors hover:bg-palette-700"
+        >Start for free</a
+      >
+    </div>
+  </div>
+</header>
+
+<script>
+  // Reveal a translucent, blurred bar only once the user scrolls — the header
+  // sits invisibly over the hero, then settles into a calm frosted strip.
+  // The frosted styles live in global.css under [data-site-header][data-scrolled]
+  // so they're never tree-shaken away (toggling Tailwind classes from JS strings
+  // is fragile — the opacity/border variants can get purged from the build).
+  const header = document.querySelector<HTMLElement>("[data-site-header]");
+  if (header) {
+    const onScroll = () => {
+      header.dataset.scrolled = String(window.scrollY > 8);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+</script>

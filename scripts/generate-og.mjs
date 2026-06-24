@@ -18,21 +18,21 @@ const sans = "Inter, Liberation Sans, DejaVu Sans, sans-serif";
 const serif = "Newsreader, DejaVu Serif, Liberation Serif, Georgia, serif";
 
 // Clean, centred brand card: the app-icon logo, the wordmark, and the
-// tagline — nothing else competing for attention. Cool near-white canvas,
+// tagline — nothing else competing for attention. Warm cream canvas,
 // near-black ink, one vivid orange accent.
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#f2f2f4"/>
-      <stop offset="100%" stop-color="#fafafb"/>
+      <stop offset="0%" stop-color="#f2efe8"/>
+      <stop offset="100%" stop-color="#fbf9f5"/>
     </linearGradient>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffe0d3"/>
-      <stop offset="100%" stop-color="#fff4ef"/>
+      <stop offset="0%" stop-color="#ffe5da"/>
+      <stop offset="100%" stop-color="#fff4ee"/>
     </linearGradient>
     <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ff6a3d"/>
-      <stop offset="100%" stop-color="#e23c10"/>
+      <stop offset="0%" stop-color="#ff6d3c"/>
+      <stop offset="100%" stop-color="#ed3a0c"/>
     </linearGradient>
     <clipPath id="logo-sq"><rect width="64" height="64" rx="14"/></clipPath>
   </defs>
@@ -46,10 +46,10 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
   </g>
 
   <!-- wordmark (serif) -->
-  <text x="600" y="408" text-anchor="middle" font-family="${serif}" font-size="80" font-weight="600" fill="#14151a" letter-spacing="-1">Briefing</text>
+  <text x="600" y="408" text-anchor="middle" font-family="${serif}" font-size="80" font-weight="600" fill="#1c1815" letter-spacing="-1">Briefing</text>
 
   <!-- tagline -->
-  <text x="600" y="470" text-anchor="middle" font-family="${sans}" font-size="34" font-weight="500" fill="#696d77">Put down the feed. Press play.</text>
+  <text x="600" y="470" text-anchor="middle" font-family="${sans}" font-size="34" font-weight="500" fill="#726b61">Put down the feed. Press play.</text>
 </svg>`;
 
 await sharp(Buffer.from(svg)).png().toFile(out);

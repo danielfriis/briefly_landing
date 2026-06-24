@@ -1,57 +1,77 @@
 ---
-import { site } from "../config";
+const points = [
+  "Distilled to what actually matters — no filler, no clickbait",
+  "Written to flow like a story, not read like a list of bullets",
+  "Every story keeps its source, so you can always dig deeper",
+];
 ---
 
-<section class="mx-auto flex w-full max-w-2xl flex-col gap-10 px-4 py-8 sm:gap-16 sm:py-12">
-  <div class="flex flex-col gap-1">
-    <p class="mb-2 text-xs font-semibold tracking-widest text-tint-700 uppercase">Made to be heard</p>
-    <h2 class="font-display text-3xl font-medium text-pretty text-ink-1">Written for radio, not bullet points.</h2>
-    <h3 class="text-2xl font-medium text-pretty text-ink-4">
-      Claude distils each story down to what actually matters, writes it into a script that flows, then reads it back in a clear, calm voice.
-    </h3>
-  </div>
+<section id="features" class="mx-auto w-full max-w-6xl px-4 sm:px-6">
+  <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+    <!-- copy -->
+    <div class="flex max-w-xl flex-col gap-5">
+      <p class="text-xs font-semibold tracking-widest text-tint-700 uppercase">Made to be heard</p>
+      <h2 class="font-display text-3xl font-medium text-pretty text-ink-1 sm:text-4xl">
+        Written for radio, not bullet points.
+      </h2>
+      <p class="text-lg leading-relaxed text-pretty text-ink-3">
+        AI distils each story down to what actually matters, writes it into a
+        script that flows, then reads it back in a clear, calm voice — the
+        difference between skimming a feed and being told what happened.
+      </p>
+      <ul class="mt-1 flex flex-col gap-3">
+        {
+          points.map((p) => (
+            <li class="flex items-start gap-2.5 text-[15px] text-ink-2">
+              <svg width="22" height="22" viewBox="0 0 24 24" class="mt-px shrink-0 text-tint" fill="none">
+                <path d="m7 13 3 3c1.5-5.5 6-9 6-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>{p}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
 
-  <div class="grid grid-cols-1 gap-px rounded-xl border md:-mx-6">
-    <div class="col-span-full flex flex-col gap-6 overflow-hidden rounded-[12px] p-6 md:flex-row md:items-start md:gap-10">
-      <div class="flex flex-col gap-2 md:w-2/5 md:shrink-0">
-        <img src="/logo.svg" alt="" width="32" height="32" class="size-8" />
-        <h3 class="mt-2 text-lg font-medium text-ink-1">Today's Briefing</h3>
-        <p class="text-lg leading-[1.4] font-medium text-pretty text-ink-3">
-          The topics you follow, plus any links you saved — in about seven minutes.
-        </p>
-      </div>
-      <div class="relative max-h-56 flex-1 md:max-h-60">
-        <div class="rounded-xl rounded-br-lg bg-elevated shadow-sm ring-[0.5px] ring-line md:translate-x-10">
-          <div class="flex items-center justify-between border-b px-3 py-2">
-            <span class="text-sm font-medium text-ink-2">Friday · 4 topics · 7 min</span>
+    <!-- transcript card (decorative illustration of the script being written) -->
+    <div class="relative" aria-hidden="true">
+      <div class="hero-glow pointer-events-none absolute inset-x-0 -top-10 h-48" aria-hidden="true"></div>
+      <div class="relative overflow-hidden rounded-2xl bg-elevated shadow-card ring-[0.5px] ring-line">
+        <div class="flex items-center justify-between border-b border-line px-5 py-3">
+          <span class="text-sm font-medium text-ink-2">Today's Briefing</span>
+          <span class="text-xs font-medium text-ink-4">Friday · 4 topics · 7 min</span>
+        </div>
+        <div class="flex flex-col gap-5 p-5 sm:p-6">
+          <div class="flex gap-3">
+            <img src="/logo.svg" alt="" width="24" height="24" class="size-6 shrink-0" />
+            <p class="text-[15px] leading-relaxed text-ink-1">
+              Good morning. Here's the latest on the topics you follow.
+            </p>
           </div>
-          <div class="flex flex-col gap-5 p-5">
-            <div class="flex gap-2.5">
-              <div class="size-5 shrink-0 rounded-full bg-surface-2"></div>
-              <p class="text-sm leading-relaxed text-ink-1">Good morning. Here's the latest on the topics you follow.</p>
-            </div>
-            <div class="flex gap-2.5">
-              <img src="/logo.svg" alt="" width="20" height="20" class="size-5 shrink-0" />
-              <div class="flex min-w-0 flex-1 flex-col gap-2">
-                <div class="flex items-center gap-1.5 text-sm text-ink-3">
-                  <span>Researching your topics</span>
-                  <span class="text-ink-4">4 topics</span>
-                </div>
-                <p class="text-sm leading-relaxed text-ink-2">
-                  First up in technology, the state of AI agents in 2026 — the big shift this
-                  year is from single prompts to long-running tasks. Then, in markets, why
-                  interest rates moved this week, and what it means for borrowers…
-                </p>
+          <div class="flex gap-3">
+            <span class="grid size-6 flex-none place-items-center rounded-full bg-surface-2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="text-ink-3"><circle cx="12" cy="12" r="7.25" stroke="currentColor" stroke-width="1.6" /><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M4.75 12h14.5" /></svg>
+            </span>
+            <div class="flex min-w-0 flex-1 flex-col gap-2">
+              <div class="flex items-center gap-1.5 text-[13px] text-ink-4">
+                <span class="font-medium text-tint-700">Researching your topics</span>
+                <span>· 4 topics · 11 sources</span>
               </div>
+              <p class="text-[15px] leading-relaxed text-ink-2">
+                First up in technology, the state of AI agents in 2026 — the big
+                shift this year is from single prompts to long-running tasks.
+                Then, in markets, why interest rates moved this week, and what it
+                means for borrowers…
+              </p>
             </div>
           </div>
-          <div class="flex items-center gap-3 border-t px-4 py-3">
-            <button class="grid size-7 flex-none place-items-center rounded-full bg-palette-800 text-[11px] text-palette-50">▶</button>
-            <div class="h-1 flex-1 overflow-hidden rounded-full bg-surface-2">
-              <div class="h-full w-1/3 rounded-full bg-tint"></div>
-            </div>
-            <span class="text-[12px] tabular-nums text-ink-3">2:14 / 7:02</span>
+        </div>
+        <div class="flex items-center gap-3 border-t border-line px-5 py-3.5">
+          <button class="grid size-8 flex-none place-items-center rounded-full bg-palette-800 text-[12px] text-palette-50">▶</button>
+          <div class="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-2">
+            <div class="h-full w-1/3 rounded-full bg-tint"></div>
           </div>
+          <span class="text-[12px] tabular-nums text-ink-3">2:14 / 7:02</span>
         </div>
       </div>
     </div>

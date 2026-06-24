@@ -1,0 +1,76 @@
+---
+const features = [
+  {
+    title: "Followed from the live web",
+    body: "Pick presets like World news or Technology, or follow anything you're curious about. Briefing researches it fresh each night — never a stale, pre-canned feed.",
+    icon: "globe",
+  },
+  {
+    title: "Save any link",
+    body: "Drop in an article, newsletter, or PDF and it rides along in your next briefing, summarised next to the topics you already follow.",
+    icon: "plus",
+  },
+  {
+    title: "On your schedule",
+    body: "Set your local hour and timezone. Your briefing is waiting the moment you wake up — no notifications, no pull-to-refresh.",
+    icon: "clock",
+  },
+  {
+    title: "Your private feed",
+    body: "Add the feed once to Apple Podcasts, Overcast, or Pocket Casts. Every morning's briefing appears automatically, ready to play.",
+    icon: "rss",
+  },
+  {
+    title: "Yours alone",
+    body: "Your topics and feed are private, secured by a secret link you can rotate any time. No public profile, no social graph.",
+    icon: "lock",
+  },
+  {
+    title: "A briefing on demand",
+    body: "Can't wait for tomorrow? Generate a fresh briefing whenever something breaks on the topics you care about.",
+    icon: "bolt",
+  },
+];
+---
+
+<section class="mx-auto w-full max-w-6xl px-4 sm:px-6">
+  <div class="flex max-w-2xl flex-col gap-3">
+    <p class="text-xs font-semibold tracking-widest text-tint-700 uppercase">Built around your curiosity</p>
+    <h2 class="font-display text-3xl font-medium text-balance text-ink-1 sm:text-4xl">
+      Everything in your morning briefing, nothing in your way.
+    </h2>
+  </div>
+
+  <div class="mt-12 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-12">
+    {
+      features.map((f) => (
+        <div class="flex flex-col gap-4">
+          <div class="flex size-11 flex-none items-center justify-center rounded-xl border border-line bg-elevated text-ink-1 shadow-soft">
+            {f.icon === "globe" && (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7.25" stroke="currentColor" stroke-width="1.5" /><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M4.75 12h14.5M12 4.75c1.9 2.05 2.75 4.55 2.75 7.25s-.85 5.2-2.75 7.25c-1.9-2.05-2.75-4.55-2.75-7.25S10.1 6.8 12 4.75Z" /></svg>
+            )}
+            {f.icon === "plus" && (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 5.75v12.5M5.75 12h12.5" /></svg>
+            )}
+            {f.icon === "clock" && (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7.25" stroke="currentColor" stroke-width="1.5" /><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l2.5 1.5" /></svg>
+            )}
+            {f.icon === "rss" && (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M5.75 5.75c7.15 0 12.5 5.35 12.5 12.5M5.75 11.25c3.85 0 7 3.15 7 7" /><circle cx="6.5" cy="17.5" r="1.25" fill="currentColor" /></svg>
+            )}
+            {f.icon === "lock" && (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M6.75 11.75c0-.55.45-1 1-1h8.5c.55 0 1 .45 1 1v5.5c0 1.1-.9 2-2 2h-6.5c-1.1 0-2-.9-2-2v-5.5Z" /><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M8.75 10.5V8.25C8.75 6.45 10.2 5 12 5s3.25 1.45 3.25 3.25v2.25" /></svg>
+            )}
+            {f.icon === "bolt" && (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12.75 4.75 6.75 13.25h4.5l-.5 6 6-8.5h-4.5l.5-6Z" /></svg>
+            )}
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <h3 class="text-lg font-semibold text-ink-1">{f.title}</h3>
+            <p class="text-[15px] leading-relaxed text-pretty text-ink-3">{f.body}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
