@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Guidance for working in this repo (the marketing landing page for **Briefing**,
+Guidance for working in this repo (the marketing landing page for **briefing.fm**,
 [briefing.fm](https://briefing.fm)). Built with Astro 5 + Tailwind CSS v4 — see
 `README.md` for stack and commands.
 
@@ -10,7 +10,7 @@ This is the heart of the pitch. Every piece of copy, every section, and every
 visual on the landing page should serve it:
 
 > We're bombarded with news every day — endless feeds, notifications, and noise
-> no one could keep up with. **Briefing cuts through the noise for you**, surfacing
+> no one could keep up with. **briefing.fm cuts through the noise for you**, surfacing
 > only the most important headlines about the things you're **most curious about**,
 > and delivers them as one short, calm podcast each morning.
 
@@ -43,7 +43,7 @@ replace it.
 - Centre the reader's curiosity ("the topics you're most curious about"), the
   overload problem, and the relief of cutting through it.
 
-## What Briefing does (the feature set)
+## What briefing.fm does (the feature set)
 
 These are *how* the promise is delivered — keep them subordinate to the why, but
 the landing copy should describe them accurately. Update this list when the
@@ -92,7 +92,7 @@ than ad-hoc values.
   high-contrast editorial serif). Every serif display heading shares one
   line-height (1.15) and tight tracking (-0.021em) via `.font-display` — tuned
   toward palette.team's display system. The brand **wordmark is sans-serif**
-  (Inter semibold "Briefing"); the serif is reserved for headings.
+  (Inter semibold "briefing.fm"); the serif is reserved for headings.
 - **Layout & rhythm.** A wide contained shell (`max-w-6xl`) with text held to
   `max-w-2xl`/`max-w-3xl`, full-bleed product mockups, and generous whitespace
   between sections. The header is sticky and transparent over the hero, frosting
@@ -106,10 +106,19 @@ than ad-hoc values.
   word). Aim for AA contrast and keep decorative mockups `aria-hidden`.
 - **Mark — boom-box + sans wordmark.** The identity is a minimal Lucide
   "boom-box" mark (audio-native — it signals "press play") beside the sans-serif
-  "Briefing" wordmark, shared via `src/components/Brand.astro` (header + footer).
+  "briefing.fm" wordmark, shared via `src/components/Brand.astro` (header + footer).
   The mark is accent-orange, tying the logo to the play button and waveform. The
-  app-icon / favicon (`public/logo.svg`) and OG card (`scripts/generate-og.mjs`)
-  reuse the boom-box on a warm near-black tile with orange speaker dots.
+  app-icon / favicon (`public/logo.svg`, with `favicon.ico` + `apple-touch-icon.png`
+  generated from it via `scripts/generate-favicon.mjs`) and OG card
+  (`scripts/generate-og.mjs`) reuse the same orange boom-box outline on a white
+  app-icon tile (a hairline `line` border defines the tile on light backgrounds) —
+  identical to the navbar mark, just wrapped in the squircle.
+- **Name — always `briefing.fm`, lowercase.** The product is branded with its
+  domain: the wordmark, `<title>`, `og:site_name`, and OG card all read
+  *briefing.fm* (never "Briefing"). Lowercase **briefing** on its own stays the
+  common noun for an episode ("your morning briefing", "Today's Briefing" in the
+  mock UI) — don't rename those. When the brand would fall at the start of a
+  sentence, reword so it sits mid-sentence rather than capitalising it.
 
 ## Keep this file current
 

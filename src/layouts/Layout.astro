@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = "Briefing — Put down the feed. Press play.",
-  description = "There's more news every day than anyone could follow. Briefing does the reading and hands you only the headlines that matter on the topics you're most curious about, in one short podcast each morning. Put down the feed. Press play.",
+  title = "briefing.fm — Put down the feed. Press play.",
+  description = "There's more news every day than anyone could follow. Overnight, briefing.fm does the reading and hands you only the headlines that matter on the topics you're most curious about, in one short podcast each morning. Put down the feed. Press play.",
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -27,7 +27,7 @@ const ogImage = new URL("/og.png", Astro.site);
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Briefing" />
+    <meta property="og:site_name" content="briefing.fm" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
@@ -36,7 +36,7 @@ const ogImage = new URL("/og.png", Astro.site);
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Briefing — put down the feed, press play."
+      content="briefing.fm — put down the feed, press play."
     />
 
     <!-- Twitter / X card -->
@@ -55,7 +55,9 @@ const ogImage = new URL("/og.png", Astro.site);
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+Oriya:wght@400..700&display=swap"
     />
 
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
   </head>
   <body class="min-h-dvh bg-surface font-sans text-ink-1 subpixel-antialiased">
