@@ -45,7 +45,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
   <text x="600" y="408" text-anchor="middle" font-family="${font}" font-size="76" font-weight="700" fill="#3a1f15" letter-spacing="-1.5">Briefing</text>
 
   <!-- tagline -->
-  <text x="600" y="470" text-anchor="middle" font-family="${font}" font-size="34" font-weight="500" fill="#97604a">Today&#8217;s news, briefed tomorrow.</text>
+  <text x="600" y="470" text-anchor="middle" font-family="${font}" font-size="34" font-weight="500" fill="#97604a">The news that matters, without the noise.</text>
 </svg>`;
 
 await sharp(Buffer.from(svg)).png().toFile(out);
