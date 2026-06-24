@@ -19,12 +19,12 @@ const bars = Array.from({ length: 34 }, (_, i) => {
 });
 
 const rotatingWords = [
-  "morning",
-  "evening",
-  "tech",
-  "politics",
-  "business",
-  "sports",
+  "AI",
+  "the markets",
+  "world politics",
+  "climate",
+  "Formula 1",
+  "your industry",
 ];
 ---
 
@@ -44,7 +44,7 @@ const rotatingWords = [
           <h1
             class="max-w-lg text-3xl font-medium tracking-[-0.5px] text-pretty text-ink-1 xl:text-4xl xl:tracking-[-0.7px]"
           >
-            Your personal <span
+            Put down the feed.<br />Press play on <span
               class="inline-flex overflow-hidden align-bottom"
               ><span
                 id="rotating-word"
@@ -52,13 +52,15 @@ const rotatingWords = [
                 class="font-semibold text-tint will-change-transform"
                 >{rotatingWords[0]}</span
               ></span
-            ><br />briefing
+            >
           </h1>
           <p
             class="text-2xl font-medium tracking-[-0.2px] text-pretty text-ink-3 xl:text-3xl xl:tracking-[-0.4px]"
           >
-            Follow the topics you care about, and wake up to an AI-summarised
-            podcast covering them — drop in your own links any time.
+            There's more news every day than anyone could follow — and most of
+            it isn't even about you. Briefing does the reading and hands you only
+            the headlines that matter on the topics you're most curious about, in
+            one short podcast each morning.
           </p>
         </div>
 

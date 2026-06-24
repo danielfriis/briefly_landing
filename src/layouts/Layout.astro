@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = "Briefing — Today's news, briefed tomorrow.",
-  description = "Follow the topics you care about. Tomorrow morning, wake up to an AI-summarised podcast covering them — plus any links you saved, ready before your coffee.",
+  title = "Briefing — Put down the feed. Press play.",
+  description = "There's more news every day than anyone could follow. Briefing does the reading and hands you only the headlines that matter on the topics you're most curious about, in one short podcast each morning. Put down the feed. Press play.",
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -36,7 +36,7 @@ const ogImage = new URL("/og.png", Astro.site);
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Briefing — today's news, briefed tomorrow."
+      content="Briefing — put down the feed, press play."
     />
 
     <!-- Twitter / X card -->

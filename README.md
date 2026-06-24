@@ -1,7 +1,7 @@
 # briefly_landing
 
 The marketing landing page for **Briefing** ([briefing.fm](https://briefing.fm)) —
-_today's news, briefed tomorrow._
+_put down the feed. press play._
 
 Built with [Astro](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com).
 

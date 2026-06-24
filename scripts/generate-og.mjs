@@ -14,13 +14,8 @@ const W = 1200;
 const H = 630;
 const font = "Liberation Sans, DejaVu Sans, sans-serif";
 
-// Echo the podcast waveform from the landing hero as a quiet bottom accent.
-const bars = Array.from({ length: 48 }, (_, i) => {
-  const h = 10 + Math.round(34 * Math.abs(Math.sin(i * 1.27)));
-  const x = 96 + i * 14;
-  return `<rect x="${x}" y="${590 - h}" width="6" height="${h}" rx="3" fill="#fb9168" opacity="0.9"/>`;
-}).join("");
-
+// Clean, centred brand card: the app-icon logo, the wordmark, and the
+// tagline — nothing else competing for attention.
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
@@ -40,24 +35,17 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
 
   <rect width="${W}" height="${H}" fill="url(#bg)"/>
 
-  <!-- brand: app-icon logo (scaled from logo.svg) + wordmark -->
-  <g transform="translate(96, 88) scale(1.5)">
+  <!-- app-icon logo (scaled from logo.svg), centred -->
+  <g transform="translate(548, 188) scale(1.6)">
     <rect width="64" height="64" rx="14" fill="url(#sky)"/>
     <path d="M0 41.25 Q32 31.25 64 41.25 L64 64 L0 64 Z" fill="url(#hill)" clip-path="url(#logo-sq)"/>
   </g>
-  <text x="206" y="148" font-family="${font}" font-size="58" font-weight="700" fill="#3a1f15">Briefing</text>
 
-  <!-- headline -->
-  <text x="96" y="320" font-family="${font}" font-size="78" font-weight="700" fill="#3a1f15" letter-spacing="-1.5">Today&#8217;s news,</text>
-  <text x="96" y="408" font-family="${font}" font-size="78" font-weight="700" fill="#3a1f15" letter-spacing="-1.5">briefed tomorrow.</text>
+  <!-- wordmark -->
+  <text x="600" y="408" text-anchor="middle" font-family="${font}" font-size="76" font-weight="700" fill="#3a1f15" letter-spacing="-1.5">Briefing</text>
 
-  <!-- subhead -->
-  <text x="98" y="466" font-family="${font}" font-size="33" font-weight="500" fill="#97604a">Wake up to an AI-summarised podcast of the links</text>
-  <text x="98" y="510" font-family="${font}" font-size="33" font-weight="500" fill="#97604a">you save and the topics you follow.</text>
-
-  <!-- waveform accent + url -->
-  ${bars}
-  <text x="1104" y="556" text-anchor="end" font-family="${font}" font-size="30" font-weight="600" fill="#c79680">briefing.fm</text>
+  <!-- tagline -->
+  <text x="600" y="470" text-anchor="middle" font-family="${font}" font-size="36" font-weight="500" fill="#97604a">Put down the feed. Press play.</text>
 </svg>`;
 
 await sharp(Buffer.from(svg)).png().toFile(out);
