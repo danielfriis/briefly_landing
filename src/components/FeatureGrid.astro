@@ -6,29 +6,29 @@ const features = [
     icon: "globe",
   },
   {
-    title: "Save any link",
-    body: "Drop in an article, newsletter, or PDF and it rides along in your next briefing, summarised next to the topics you already follow.",
+    title: "Specials, on the spot",
+    body: "Share one or more articles and get a briefing on just those, generated on the spot — for when news breaks and waiting until tomorrow morning is too long.",
+    icon: "sparkles",
+  },
+  {
+    title: "Save links for the morning",
+    body: "Drop an article, newsletter, or PDF into your next briefing and it's summarised right alongside the topics you already follow.",
     icon: "plus",
   },
   {
     title: "On your schedule",
-    body: "Set your local hour and timezone. Your briefing is waiting the moment you wake up — no notifications, no pull-to-refresh.",
+    body: "Choose the exact time and timezone you want it delivered. Your briefing is waiting the moment you wake up — no notifications, no pull-to-refresh.",
     icon: "clock",
   },
   {
     title: "Your private feed",
-    body: "Add the feed once to Apple Podcasts, Overcast, or Pocket Casts. Every morning's briefing appears automatically, ready to play.",
+    body: "Add the feed once to Apple Podcasts, Overcast, or Pocket Casts. Every briefing appears automatically, ready to play.",
     icon: "rss",
   },
   {
     title: "Yours alone",
     body: "Your topics and feed are private, secured by a secret link you can rotate any time. No public profile, no social graph.",
     icon: "lock",
-  },
-  {
-    title: "A briefing on demand",
-    body: "Can't wait for tomorrow? Generate a fresh briefing whenever something breaks on the topics you care about.",
-    icon: "bolt",
   },
 ];
 ---
@@ -37,7 +37,7 @@ const features = [
   <div class="flex max-w-2xl flex-col gap-3">
     <p class="text-xs font-semibold tracking-widest text-tint-700 uppercase">Built around your curiosity</p>
     <h2 class="font-display text-3xl font-medium text-balance text-ink-1 sm:text-4xl">
-      Everything in your morning briefing, nothing in your way.
+      Everything you'd want, nothing you wouldn't.
     </h2>
   </div>
 
@@ -61,8 +61,8 @@ const features = [
             {f.icon === "lock" && (
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M6.75 11.75c0-.55.45-1 1-1h8.5c.55 0 1 .45 1 1v5.5c0 1.1-.9 2-2 2h-6.5c-1.1 0-2-.9-2-2v-5.5Z" /><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M8.75 10.5V8.25C8.75 6.45 10.2 5 12 5s3.25 1.45 3.25 3.25v2.25" /></svg>
             )}
-            {f.icon === "bolt" && (
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12.75 4.75 6.75 13.25h4.5l-.5 6 6-8.5h-4.5l.5-6Z" /></svg>
+            {f.icon === "sparkles" && (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 4.5c.45 3 1.5 4.05 4.5 4.5-3 .45-4.05 1.5-4.5 4.5-.45-3-1.5-4.05-4.5-4.5 3-.45 4.05-1.5 4.5-4.5Z" /><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M17.5 14c.2 1.5.75 2.05 2.25 2.25-1.5.2-2.05.75-2.25 2.25-.2-1.5-.75-2.05-2.25-2.25 1.5-.2 2.05-.75 2.25-2.25Z" /></svg>
             )}
           </div>
           <div class="flex flex-col gap-1.5">

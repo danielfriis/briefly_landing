@@ -27,8 +27,8 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
       <stop offset="100%" stop-color="#fbf9f5"/>
     </linearGradient>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffe5da"/>
-      <stop offset="100%" stop-color="#fff4ee"/>
+      <stop offset="0%" stop-color="#fff6ee"/>
+      <stop offset="100%" stop-color="#ffe7d6"/>
     </linearGradient>
     <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#ff6d3c"/>
@@ -39,10 +39,11 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
 
   <rect width="${W}" height="${H}" fill="url(#bg)"/>
 
-  <!-- app-icon logo (scaled from logo.svg), centred -->
-  <g transform="translate(548, 188) scale(1.6)">
-    <rect width="64" height="64" rx="14" fill="url(#sky)"/>
-    <path d="M0 41.25 Q32 31.25 64 41.25 L64 64 L0 64 Z" fill="url(#hill)" clip-path="url(#logo-sq)"/>
+  <!-- minimal rising-sun mark (matches logo.svg), centred above the wordmark -->
+  <g transform="translate(553, 196) scale(1.5)">
+    <rect width="64" height="64" rx="15" fill="url(#sky)"/>
+    <path d="M17 40 a15 15 0 0 1 30 0 Z" fill="url(#hill)"/>
+    <rect x="15.5" y="42.5" width="33" height="2.6" rx="1.3" fill="url(#hill)"/>
   </g>
 
   <!-- wordmark (serif) -->

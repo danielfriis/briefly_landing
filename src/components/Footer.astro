@@ -22,16 +22,15 @@ const cols = [
 ];
 ---
 
-<footer class="bg-palette-900 text-surface">
-  <div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 py-16 sm:px-6 sm:py-20">
+<footer class="bg-surface text-ink-1">
+  <div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 pt-24 pb-16 sm:px-6 sm:pt-36 sm:pb-20">
     <div class="flex flex-col gap-10 sm:flex-row sm:justify-between">
       <!-- brand -->
       <div class="flex max-w-xs flex-col gap-4">
-        <a href="/" class="flex select-none items-center gap-2">
-          <img src="/logo.svg" alt="" width="28" height="28" class="size-7" />
-          <span class="text-lg font-semibold tracking-tight text-surface">{site.name}</span>
+        <a href="/" class="flex select-none items-center">
+          <span class="font-display text-2xl font-semibold tracking-[-0.01em] text-ink-1">{site.name}</span>
         </a>
-        <p class="font-display text-lg text-palette-300">
+        <p class="font-display text-lg text-ink-3">
           Put down the feed. Press play.
         </p>
       </div>
@@ -41,11 +40,11 @@ const cols = [
         {
           cols.map((col) => (
             <div class="flex flex-col gap-3">
-              <p class="text-xs font-semibold tracking-widest text-palette-400 uppercase">{col.title}</p>
+              <p class="text-xs font-semibold tracking-widest text-ink-3 uppercase">{col.title}</p>
               <ul class="flex flex-col gap-2.5">
                 {col.links.map((l) => (
                   <li>
-                    <a href={l.href} class="text-sm text-palette-300 transition-colors hover:text-surface">
+                    <a href={l.href} class="text-sm text-ink-2 transition-colors hover:text-ink-1">
                       {l.label}
                     </a>
                   </li>
@@ -57,7 +56,7 @@ const cols = [
       </div>
     </div>
 
-    <div class="flex flex-col gap-2 border-t border-palette-800 pt-8 text-sm text-palette-400 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex flex-col gap-2 text-sm text-ink-3 sm:flex-row sm:items-center sm:justify-between">
       <p>© {year} {site.name}</p>
       <p>One calm briefing each morning.</p>
     </div>
