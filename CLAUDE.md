@@ -23,7 +23,9 @@ replace it.
 
 ### Voice & messaging
 
-- **Tagline:** _The news that matters, without the noise._
+- **Tagline:** _Put down the feed. Press play._ — names the enemy (the endless
+  feed / doomscroll) and the relief (just listen). Audio-native and ownable; avoid
+  reverting to generic category lines like "news that matters" or "signal not noise."
 - Calm, premium, and quiet — never breathless or hype-y. The aesthetic (warm
   neutral palette, one orange accent, generous whitespace) is itself part of the
   message: the antidote to noise.
