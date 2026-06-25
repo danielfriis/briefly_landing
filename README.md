@@ -15,9 +15,9 @@ Built with [Astro](https://astro.build) and [Tailwind CSS v4](https://tailwindcs
 
 ```
 src/
-  components/    Header, Hero, HowItWorks, Features, CTA, Footer
+  components/    Header, Footer, Brand
   layouts/       Layout.astro   (html shell + <head> meta)
-  pages/         index.astro    (assembles the components)
+  pages/         index.astro    (the single-column landing page)
   styles/        global.css     (Tailwind import + theme tokens + waveform keyframes)
   config.ts      shared brand + app URLs
 scripts/
