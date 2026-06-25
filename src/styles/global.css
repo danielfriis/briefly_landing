@@ -117,22 +117,6 @@ body {
   }
 }
 
-/* Warm ambient glow behind the hero product window — the one warm light
-   source on the page, echoing the accent without shouting. */
-.hero-glow {
-  background:
-    radial-gradient(
-      60% 55% at 50% 0%,
-      color-mix(in oklch, var(--color-tint) 22%, transparent),
-      transparent 70%
-    ),
-    radial-gradient(
-      40% 40% at 78% 12%,
-      color-mix(in oklch, var(--color-tint-300) 35%, transparent),
-      transparent 72%
-    );
-}
-
 /* Sticky header: invisible over the hero, settling into a calm frosted strip
    once scrolled. Driven by a data attribute (set in Header.astro) so the
    translucent background + border survive the production build. */
@@ -143,17 +127,15 @@ body {
   border-bottom-color: var(--color-line);
 }
 
-/* Quiet accordion chevron rotation for the FAQ */
-details[open] .faq-chevron {
-  transform: rotate(180deg);
-}
-.faq-chevron {
-  transition: transform 0.2s ease;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .waveform span {
     animation: none !important;
     transform: scaleY(0.6) !important;
+  }
+
+  /* Hero scroll cue + "reading…" dots: hold still rather than loop. */
+  .animate-bounce,
+  .animate-pulse {
+    animation: none !important;
   }
 }

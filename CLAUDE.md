@@ -35,11 +35,13 @@ replace it.
   previously kept in sync with the app's cool neutrals at
   `briefly/app/assets/tailwind/application.css`; the landing now intentionally
   runs *warm* — if you re-sync, carry the warm shift across rather than reverting.)
-- Layout: a wide, contained shell (`max-w-6xl`) with text held to a comfortable
-  measure, full-bleed product mockups, and a clear section rhythm (sticky header →
-  hero → "listen anywhere" band → how-it-works → radio showcase → feature grid →
-  pricing → FAQ → closing CTA → footer). Reach for breadth and structure, not a
-  single narrow column.
+- Layout: a single calm column (`max-w-xl`) read top to bottom — one message
+  per section, each paired with a single small, focused visual. The rhythm is a
+  short story: full-screen hero (the relief of quitting the doomscroll) → "set
+  it once" (follow topics) → "overnight" (we read the web) → "on your schedule"
+  (press play whenever you want) → "wherever you listen" (podcast-app logos) →
+  closing CTA → footer. Sections are separated by hairline `border-line` rules,
+  not bands. Calm and linear — no grids, no side-by-sides.
 - Centre the reader's curiosity ("the topics you're most curious about"), the
   overload problem, and the relief of cutting through it.
 
@@ -55,7 +57,10 @@ product gains or changes a capability.
 - **Overnight research → radio script** — AI reads across your topics, keeps only
   what's worth knowing, writes it into a tight script, and reads it back in a
   calm, natural voice. Each story keeps its source.
-- **One short morning briefing** — delivered daily, usually ~5–10 minutes.
+- **One curated briefing** — everything worth knowing, curated and compacted
+  into a single daily listen. The value is curation + audio, not brevity:
+  length varies with the day's news (often ~10–15 minutes), so don't pitch it as
+  "short" or pin it to a fixed run time.
 - **On your schedule** — you choose the exact delivery time and timezone; the
   briefing is waiting when you want it.
 - **Save links for the morning** — drop any article, newsletter, or PDF into your
@@ -86,24 +91,25 @@ than ad-hoc values.
   warm "stone" neutral ramp `palette-50…900` supplies the dark fills (primary
   buttons use `palette-800`). One vivid orange accent: `tint` `#ff4612` with a
   50–700 ramp — `tint-700` is the AA-safe accent for eyebrows/links on light,
-  `tint` for fills, the rotating hero word, waveforms, and `hero-glow`.
+  `tint` for fills, waveforms, and the play button.
 - **Type.** Inter (body, `--font-sans`) + Noto Serif Oriya (display,
   `--font-display` / `.font-display`; its Latin subset is a refined,
   high-contrast editorial serif). Every serif display heading shares one
   line-height (1.15) and tight tracking (-0.021em) via `.font-display` — tuned
   toward palette.team's display system. The brand **wordmark is sans-serif**
   (Inter semibold "briefing.fm"); the serif is reserved for headings.
-- **Layout & rhythm.** A wide contained shell (`max-w-6xl`) with text held to
-  `max-w-2xl`/`max-w-3xl`, full-bleed product mockups, and generous whitespace
-  between sections. The header is sticky and transparent over the hero, frosting
-  on scroll via `[data-site-header][data-scrolled]` (the only border appears once
-  scrolled). The footer shares the page background — no band, no border.
+- **Layout & rhythm.** A single centered column (`main` at `max-w-xl`) with text
+  held to `max-w-md`, one message per section, and generous whitespace.
+  Sections are divided by hairline `border-line` rules (no bands). The header is
+  sticky and transparent over the hero, frosting on scroll via
+  `[data-site-header][data-scrolled]` (the only border appears once scrolled).
+  The footer shares the page background — no band, no border.
 - **Components.** Pill buttons (dark `palette-800` primary; hairline-bordered
-  ghost), rounded cards (`rounded-2xl`/`rounded-3xl`) on `elevated` with
-  `shadow-card`, hairline dividers (`border-line`), the warm `hero-glow` behind
-  product imagery, native `<details>` FAQ accordions, visible `:focus-visible`
-  rings in `tint`, and `prefers-reduced-motion` honoured (waveform + rotating
-  word). Aim for AA contrast and keep decorative mockups `aria-hidden`.
+  ghost), rounded cards (`rounded-2xl`) on `elevated` with `shadow-card` for the
+  focused per-section mockups, hairline dividers (`border-line`), the animated
+  hero scroll cue, visible `:focus-visible` rings in `tint`, and
+  `prefers-reduced-motion` honoured (waveform). Aim for AA contrast and keep
+  decorative mockups `aria-hidden`.
 - **Mark — boom-box + sans wordmark.** The identity is a minimal Lucide
   "boom-box" mark (audio-native — it signals "press play") beside the sans-serif
   "briefing.fm" wordmark, shared via `src/components/Brand.astro` (header + footer).

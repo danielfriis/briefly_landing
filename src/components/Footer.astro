@@ -1,63 +1,21 @@
 ---
+// Quiet, centered footer — shares the page background, no band or heavy link
+// grid. Just the mark, the tagline, and the essentials.
 import { site } from "../config";
 import Brand from "./Brand.astro";
 const year = new Date().getFullYear();
-
-const cols = [
-  {
-    title: "Product",
-    links: [
-      { label: "How it works", href: "#how" },
-      { label: "Listen", href: "#listen" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "FAQ", href: "#faq" },
-    ],
-  },
-  {
-    title: "Account",
-    links: [
-      { label: "Start for free", href: site.signUp },
-      { label: "Sign in", href: site.signIn },
-    ],
-  },
-];
 ---
 
 <footer class="bg-surface text-ink-1">
-  <div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 pt-24 pb-16 sm:px-6 sm:pt-36 sm:pb-20">
-    <div class="flex flex-col gap-10 sm:flex-row sm:justify-between">
-      <!-- brand -->
-      <div class="flex max-w-xs flex-col gap-4">
-        <Brand size="lg" />
-        <p class="font-display text-lg text-ink-3">
-          Put down the feed. Press play.
-        </p>
-      </div>
-
-      <!-- link columns -->
-      <div class="flex gap-16">
-        {
-          cols.map((col) => (
-            <div class="flex flex-col gap-3">
-              <p class="text-xs font-semibold tracking-widest text-ink-3 uppercase">{col.title}</p>
-              <ul class="flex flex-col gap-2.5">
-                {col.links.map((l) => (
-                  <li>
-                    <a href={l.href} class="text-sm text-ink-2 transition-colors hover:text-ink-1">
-                      {l.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))
-        }
-      </div>
+  <div
+    class="mx-auto flex w-full max-w-2xl flex-col items-center gap-5 px-5 pt-24 pb-16 text-center sm:pt-32"
+  >
+    <Brand />
+    <p class="font-display text-lg text-ink-3">Put down the feed. Press play.</p>
+    <div class="flex items-center gap-5 text-sm text-ink-2">
+      <a href={site.signUp} class="transition-colors hover:text-ink-1">Start for free</a>
+      <a href={site.signIn} class="transition-colors hover:text-ink-1">Sign in</a>
     </div>
-
-    <div class="flex flex-col gap-2 text-sm text-ink-3 sm:flex-row sm:items-center sm:justify-between">
-      <p>© {year} {site.name}</p>
-      <p>One calm briefing each morning.</p>
-    </div>
+    <p class="text-sm text-ink-4">© {year} {site.name}</p>
   </div>
 </footer>
