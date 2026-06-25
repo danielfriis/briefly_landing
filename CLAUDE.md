@@ -37,8 +37,9 @@ replace it.
   runs *warm* — if you re-sync, carry the warm shift across rather than reverting.)
 - Layout: a single calm column (`max-w-xl`) read top to bottom — one message
   per section, each paired with a single small, focused visual. The rhythm is a
-  short story: full-screen hero (the relief of quitting the doomscroll) → "set
-  it once" (follow topics) → "overnight" (we read the web) → "on your schedule"
+  short story: full-screen hero (lead with what it is — all the news you care
+  about in one personal podcast — and the why: endless news in, one calm
+  briefing out) → "set it once" (follow topics) → "overnight" (we read the web) → "on your schedule"
   (press play whenever you want) → "wherever you listen" (podcast-app logos) →
   closing CTA → footer. Sections are separated by hairline `border-line` rules,
   not bands. Calm and linear — no grids, no side-by-sides.
